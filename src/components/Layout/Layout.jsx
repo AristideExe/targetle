@@ -7,4 +7,6 @@ const Layout = () => (
     </>   
 );
 
+Layout.propTypes = {};
+
 export default Layout;

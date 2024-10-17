@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Outlet } from "react-router-dom";
+import "./Layout.css";
+import { creditsPaths } from "../../routes";
 
 const Layout = () => {
     const { t, i18n: { changeLanguage, language }} = useTranslation();
@@ -25,15 +27,25 @@ const Layout = () => {
     }
 
     return (
-        <>
-            <h1>Targetle</h1>
-            <Link onClick={handleChangeLanguage}>{t("layout.changeLangage")}</Link>
-            <br/>
-            <Link onClick={handleChangeColorScheme}>
-                {isDark ? t("layout.switchToLightMode") : t("layout.switchToDarkMode")}
-            </Link>
-            <Outlet />
-        </>
+        <div className="layout">
+            <div className="main">
+                <div className="header">
+                    <Link to={{}} onClick={handleChangeLanguage}>{t("layout.header.changeLangage")}</Link>
+                    <Link to="/" className="title">
+                        <h1>Targetle</h1>
+                    </Link>
+                    <Link to={{}} onClick={handleChangeColorScheme}>
+                        {isDark ? t("layout.header.switchToLightMode") : t("layout.header.switchToDarkMode")}
+                    </Link>
+                </div>  
+                <div className="content">
+                    <Outlet/>
+                </div>
+                <div className="footer">
+                    <Link to={creditsPaths}>{t("layout.footer.credits")}</Link>
+                </div>
+            </div>
+        </div>
     )
 };
 

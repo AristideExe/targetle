@@ -1,12 +1,20 @@
 {
     "translation": {
         "layout": {
-            "changeLangage": "Change langage",
-            "switchToLightMode": "Light mode",
-            "switchToDarkMode": "Dark mode"
+            "header": {
+                "changeLangage": "Change language",
+                "switchToLightMode": "Light mode",
+                "switchToDarkMode": "Dark mode"
+            },
+            "footer": {
+                "credits": "Credits"
+            }
         },
         "home": {
             "title": "Home"
+        },
+        "credits": {
+            "title": "Credits"
         }
     }
 }

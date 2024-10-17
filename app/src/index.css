@@ -8,6 +8,11 @@ body.dark {
     --color-main: white;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: var(--background-color);
     transition: background-color 0.1s linear;

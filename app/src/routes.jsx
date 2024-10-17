@@ -3,6 +3,8 @@ import Home from "./components/Home/Home";
 import Layout from "./components/Layout/Layout";
 import Credits from "./components/Credits/Credits";
 
+export const creditsPaths = "/credits";
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -13,10 +15,14 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/credits',
+                path: creditsPaths,
                 element: <Credits />
-            }
+            },
         ],
+    },
+    {
+        path: '*',
+        element: <p>La page demandée n&apos;a pas été trouvée</p>
     }
 ]);
 

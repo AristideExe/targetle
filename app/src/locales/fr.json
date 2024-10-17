@@ -1,12 +1,20 @@
 {
     "translation": {
         "layout": {
-            "changeLangage": "Changer la langue",
-            "switchToLightMode": "Mode clair",
-            "switchToDarkMode": "Mode sombre"
+            "header": {
+                "changeLangage": "Changer la langue",
+                "switchToLightMode": "Mode clair",
+                "switchToDarkMode": "Mode sombre"
+            },
+            "footer": {
+                "credits": "Crédits"
+            }
         },
         "home": {
             "title": "Accueil"
+        },
+        "credits": {
+            "title": "Crédits"
         }
     }
 }

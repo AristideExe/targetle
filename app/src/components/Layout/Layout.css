@@ -24,6 +24,13 @@
     text-decoration: none;
 }
 
+.title h1 {
+    color: var(--background-color);
+    letter-spacing: 1rem;
+    background-color: #ff000e;
+    padding: 0 4rem;
+}
+
 .content {
     padding: 3rem 0;
     flex: 1 1 auto;

@@ -7,7 +7,7 @@ import { creditsPaths } from "../../routes";
 const Layout = () => {
     const { t, i18n: { changeLanguage, language }} = useTranslation();
     const [currentLanguage, setCurrentLanguage] = useState(language)
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(true);
     
     const handleChangeLanguage = () => {
         const newLanguage = currentLanguage === "fr" ? "en" : "fr";
@@ -32,7 +32,7 @@ const Layout = () => {
                 <div className="header">
                     <Link to={{}} onClick={handleChangeLanguage}>{t("layout.header.changeLangage")}</Link>
                     <Link to="/" className="title">
-                        <h1>Targetle</h1>
+                        <h1>TARGETLE</h1>
                     </Link>
                     <Link to={{}} onClick={handleChangeColorScheme}>
                         {isDark ? t("layout.header.switchToLightMode") : t("layout.header.switchToDarkMode")}

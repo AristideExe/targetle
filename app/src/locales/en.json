@@ -1,7 +1,9 @@
 {
     "translation": {
         "layout": {
-            "changeLangage": "Change langage"
+            "changeLangage": "Change langage",
+            "switchToLightMode": "Light mode",
+            "switchToDarkMode": "Dark mode"
         },
         "home": {
             "title": "Home"

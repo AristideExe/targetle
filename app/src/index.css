@@ -1,0 +1,19 @@
+body {
+    --background-color: white;
+    --color-main: black;
+}
+
+body.dark {
+    --background-color: black;
+    --color-main: white;
+}
+
+body {
+    background-color: var(--background-color);
+    transition: background-color 0.1s linear;
+}
+
+body * {
+    color: var(--color-main);
+    transition: color 0.1s linear;
+}

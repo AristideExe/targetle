@@ -1,0 +1,9 @@
+.option > img {
+    height: 5rem;
+    vertical-align: middle;
+}
+
+.option > span {
+    vertical-align: middle;
+    padding: 0 .5rem;
+}

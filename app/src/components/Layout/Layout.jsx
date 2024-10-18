@@ -42,7 +42,11 @@ const Layout = () => {
                     <Outlet/>
                 </div>
                 <div className="footer">
-                    <Link to={creditsPaths}>{t("layout.footer.credits")}</Link>
+                    <Link to={creditsPaths}>
+                        <div className="footerLink">
+                            {t("layout.footer.credits")}
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

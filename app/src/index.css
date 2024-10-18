@@ -1,10 +1,13 @@
 body {
-    --background-color: white;
+    --background-color-main: white;
+    --background-color-secondary: #19232ca2;
     --color-main: black;
+    --color-red: #ff000e;
+    --color-white: white;
 }
 
 body.dark {
-    --background-color: black;
+    --background-color-main: black;
     --color-main: white;
 }
 
@@ -14,7 +17,7 @@ body.dark {
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--background-color-main);
     transition: background-color 0.1s linear;
     font-family: sans-serif;
 }
@@ -22,4 +25,8 @@ body {
 body * {
     color: var(--color-main);
     transition: color 0.1s linear;
+}
+
+a {
+    text-decoration: none;
 }

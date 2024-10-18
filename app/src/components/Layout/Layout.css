@@ -7,7 +7,7 @@
 }
 
 .main {
-    width: 40%;
+    width: 70%;
     height: 80%;
     display: flex;
     flex-flow: column;
@@ -20,14 +20,10 @@
     justify-content: space-between;
 }
 
-.title {
-    text-decoration: none;
-}
-
 .title h1 {
-    color: var(--background-color);
+    color: var(--background-color-main);
     letter-spacing: 1rem;
-    background-color: #ff000e;
+    background-color: var(--color-red);
     padding: 0 4rem;
 }
 
@@ -37,5 +33,20 @@
 }
 
 .footer {
+    display: flex;
+    background-color: var(--background-color-secondary);
     flex: 0 1 auto;
+}
+
+.footerLink {
+    padding: 1rem 6rem;
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-weight: bolder;
+    transition: all 0.1s ease-in-out;
+}
+
+.footerLink:hover {
+    background-color: var(--color-red);
+    transform: scale(1.05);
 }

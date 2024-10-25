@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <>
             {/* <p>{t("home.title")}</p> */}
-            <TargetSelector />
+            <TargetSelector submitTarget={(targetId) => targetId == 1}/>
         </>
     )
 }

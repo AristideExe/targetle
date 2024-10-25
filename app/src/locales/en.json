@@ -14,7 +14,14 @@
             "title": "Home",
             "targetSelector": {
                 "noCharacterFound": "No target found",
-                "startTyping": "Start typing target name"
+                "startTyping": "Start typing target name",
+                "header": {
+                    "target": "Target",
+                    "gender": "Gender",
+                    "mission": "Mission",
+                    "nationality": "Nationality",
+                    "age": "Age"
+                }
             }
         },
         "credits": {

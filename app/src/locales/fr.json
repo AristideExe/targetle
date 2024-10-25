@@ -14,7 +14,14 @@
             "title": "Accueil",
             "targetSelector": {
                 "noCharacterFound": "Aucune cible trouvée",
-                "startTyping": "Commencez à taper le nom d'une cible"
+                "startTyping": "Commencez à taper le nom d'une cible",
+                "header": {
+                    "target": "Cible",
+                    "gender": "Genre",
+                    "mission": "Mission",
+                    "nationality": "Nationalité",
+                    "age": "Âge"
+                }
             }
         },
         "credits": {

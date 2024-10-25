@@ -11,7 +11,11 @@
             }
         },
         "home": {
-            "title": "Accueil"
+            "title": "Accueil",
+            "targetSelector": {
+                "noCharacterFound": "Aucune cible trouvée",
+                "startTyping": "Commencez à taper le nom d'une cible"
+            }
         },
         "credits": {
             "title": "Crédits"

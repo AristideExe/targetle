@@ -11,7 +11,11 @@
             }
         },
         "home": {
-            "title": "Home"
+            "title": "Home",
+            "targetSelector": {
+                "noCharacterFound": "No target found",
+                "startTyping": "Start typing target name"
+            }
         },
         "credits": {
             "title": "Credits"

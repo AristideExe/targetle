@@ -11,7 +11,7 @@
             }
         },
         "home": {
-            "title": "Accueil",
+            "title": "Devinez la cible du jour !",
             "targetSelector": {
                 "noCharacterFound": "Aucune cible trouvée",
                 "startTyping": "Commencez à taper le nom d'une cible",

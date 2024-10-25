@@ -1,12 +1,13 @@
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import TargetSelector from "../TargetSelector/TargetSelector";
+import "./Home.css";
 
 const Home = () => {
-    // const { t } = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <>
-            {/* <p>{t("home.title")}</p> */}
+            <h2>{t("home.title")}</h2>
             <TargetSelector submitTarget={(targetId) => targetId == 1}/>
         </>
     )

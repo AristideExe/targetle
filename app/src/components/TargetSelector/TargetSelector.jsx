@@ -23,7 +23,7 @@ const loadOptions = (inputValue, callback) => {
 }
 
 // Le paquet react-select recommande fortement d'utiliser du css dans le js afin de
-// personnaliser les styles du select.
+// personnaliser les styles internes du select.
 const customStyles = {
     menu: (styles) => ({
         ...styles,

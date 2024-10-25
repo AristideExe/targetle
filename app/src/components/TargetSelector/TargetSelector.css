@@ -17,7 +17,7 @@
 }
 
 .answersHeader span {
-    border-bottom: 3px solid var(--color-main);
+    border-bottom: 2px solid var(--color-main);
     text-align: center;
     padding: .7rem;
 }

@@ -14,10 +14,14 @@
 }
 
 .header {
-    flex: 0 1 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.header a {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .title h1 {

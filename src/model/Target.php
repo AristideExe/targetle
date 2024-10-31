@@ -32,7 +32,3 @@ class Target {
         $this->nationality = $nationality;
     }
 }
-
-$target = new Target("88888", "Dalia-Margolis.webp", "Dalia Margolis", Gender::F, Mission::the_showstopper, 30, Nationality::IL);
-
-echo var_dump($target);

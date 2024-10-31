@@ -1,8 +1,8 @@
 <?php
 
-enum Nationality {
-    CASE FR;
-    CASE IL;
-    case RU;
-    case US;
+enum Nationality : string {
+    case FR = "FR";
+    case IL = "IL";
+    case RU = "RU";
+    case US = "US";
 }

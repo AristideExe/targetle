@@ -1,6 +1,6 @@
 <?php
 
-enum Gender {
-    case M;
-    case F;
+enum Gender : string {
+    case M = 'M';
+    case F = 'F';
 }

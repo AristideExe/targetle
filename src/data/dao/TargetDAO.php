@@ -4,7 +4,7 @@ require_once(dirname(__FILE__) ."/../Database.php");
 require_once(dirname(__FILE__) ."/../../model/Target.php");
 
 class TargetDAO {
-    public function getAllTargets(): array {
+    public function getAll(): array {
         $db = new Database();
         $targets = $db->fetchAll("SELECT * FROM targetle.target");
         $result = [];

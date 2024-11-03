@@ -4,21 +4,19 @@ import { useTranslation } from "react-i18next";
 import "./TargetSelector.css";
 import { useState } from "react";
 
-
-const options = [
-    { id: 1, name: 'Kalvin Ritter', image: "/targets/Kalvin-Ritter.webp" },
-    { id: 2, name: 'Jasper Knight', image: "/targets/Jasper-Knight.webp" },
-    { id: 3, name: 'Viktor Novikov', image: "/targets/Viktor-Novikov.webp" },
-    { id: 4, name: 'Dalia Margolis', image: "/targets/Dalia-Margolis.webp" },
-    { id: 5, name: 'Silvio Caruso', image: "/targets/Silvio-Caruso.webp" },
-    { id: 6, name: 'Francesca De Santis', image: "/targets/Francesca-De-Santis.webp" },
-];
-
 const loadOptions = (inputValue, callback) => {
-    setTimeout(() => {
-        callback(options.filter((option => 
-            option.name.toLowerCase().includes(inputValue)))),
-        1000
+    fetch('http://localhost:8000/controllers/TargetController.php')
+    .then(response => {
+        if (!response.ok){
+            throw new Error('Erreur réseau: ' + response.statusText)
+        };
+        return response.json();
+    })
+    .then(data => {
+        callback(data)
+    })
+    .catch(error => {
+        console.error('Erreur lors de la récupération des données :', error);
     });
 }
 
@@ -89,8 +87,6 @@ const TargetSelector = ({ submitTarget }) => {
     const [ selectValue, setSelectValue ] = useState(null);
     const [ answers, setAnswers ] = useState([]);
 
-
-
     const handleChange = (value) => {
         setSelectValue(null);
         setAnswers([value, ...answers ])
@@ -112,12 +108,14 @@ const TargetSelector = ({ submitTarget }) => {
                     inputValue !== "" ? (<p>{t("home.targetSelector.noCharacterFound")}</p>) : null
                 }
                 placeholder={t("home.targetSelector.startTyping")}
-                formatOptionLabel={option => (
-                    <div className="option">
-                        <img src={option.image} />
-                        <span>{option.name}</span>
-                    </div>
-                )}
+                formatOptionLabel={option => {
+                    return (
+                        <div className="option">
+                            <img src={`targets/${option.image_path}`} />
+                            <span>{option.name}</span>
+                        </div>
+                    )
+                }}
                 value={selectValue}
                 styles={customStyles}
                 onChange={handleChange}
@@ -147,7 +145,7 @@ const Answers = ({ answers = [] }) => {
                     <span>{t("home.targetSelector.header.age")}</span>
                 </div>
                 {answers.map(answer => 
-                    <Answer answer={answer} key={answer.id} />
+                    <Answer answer={answer} key={answer.target_id} />
                 )}
             </div>
         </div>
@@ -160,11 +158,11 @@ Answers.propTypes = {
 
 const Answer = ({ answer }) => (
     <div className="answer">
-        <img src={answer.image} />
-        <span>Homme</span>
-        <span>The Showstopper</span>
-        <span>Américain</span>
-        <span>50</span>
+        <img src={`targets/${answer.image_path}`} />
+        <span>{answer.gender}</span>
+        <span>{answer.mission}</span>
+        <span>{answer.nationality}</span>
+        <span>{answer.age}</span>
     </div>
 );
 

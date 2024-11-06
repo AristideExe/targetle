@@ -37,10 +37,10 @@ class Target implements JsonSerializable {
             "target_id" => $this->target_id,
             "image_path"=> $this->image_path,
             "name"=> $this->name,
-            "gender"=> $this->gender,
-            "mission"=> $this->mission,
+            "gender"=> $this->gender->name,
+            "mission"=> $this->mission->name,
             "age"=> $this->age,
-            "nationality"=> $this->nationality
+            "nationality"=> $this->nationality->name
         ];
     }
 }

@@ -1,5 +1,59 @@
 {
     "translation": {
+        "enum": {
+            "gender": {
+                "female": "Femme",
+                "male": "Homme"
+            },
+            "nationality": {
+                "fr": "Français",
+                "il": "Israélien",
+                "ru": "Russe",
+                "us": "Américain"
+            },
+            "mission": {
+                "training": "Entraînement Libre",
+                "theFinalTest": "Le Test Final",
+                "theShowstopper": "Showstopper",
+                "holidayHoarders": "Écureuils des Vacances",
+                "worldOfTomorrow": "Le Monde de Demain",
+                "theIcon": "L'icône",
+                "landslide": "Raz-de-Marée",
+                "theAuthor": "The Author",
+                "aGuildedCage": "Une Cage Dorée",
+                "aHouseBuiltOnSand": "Une Maison sur le Sable",
+                "club27": "Club 27",
+                "theSource": "La Source",
+                "freedomFighters": "Combat pour la Liberté",
+                "theVector": "Le vecteur",
+                "situsInvertus": "Situs Invertus",
+                "patientZero": "Patient Zéro",
+                "hokkaidoSnowFestival": "Festival de la Neige de Hokkaidō",
+                "nightcall": "L'Appel de la Nuit",
+                "theFinishLine": "La Ligne d'Arrivée",
+                "aSilverTongue": "Paroles, Paroles...",
+                "threeHeaderSerpent": "Le Serpent à Trois Têtes",
+                "embraceOfTheSerpent": "Étreinte du Serpent",
+                "chasingAGhost": "Chasse au Fantôme",
+                "illusionsOfGrandeur": "La Folie des Grandeurs",
+                "anotherLife": "Une Autre Vie",
+                "aBitterPill": "Douce Amertume",
+                "theArkSociety": "La Société de l'Arche",
+                "goldenHandshake": "Parachute Doré",
+                "theLastResort": "Le Dernier Recours",
+                "theLastYardbird": "Le Dernier Yardbird",
+                "thePenAndTheSword": "La Plume et l'Épée",
+                "crimeAndPunishment": "Crime et Châtiment",
+                "onTopOfTheWorld": "Sur le Toit du Monde",
+                "deathInTheFamily": "Mort dans la Famille",
+                "theDartmoorGardenShow": "Une journée mémorable",
+                "apexPredator": "Prédateur Perché",
+                "endOfAnEra": "Fin d'une Ère",
+                "theFarewell": "L'Adieu",
+                "untouchable": "Intouchable",
+                "shadowsInTheWater": "Des ombres dans l'eau"
+            }
+        },
         "layout": {
             "header": {
                 "changeLangage": "Changer la langue",

@@ -3,6 +3,9 @@ import AsyncSelect from "react-select/async";
 import { useTranslation } from "react-i18next";
 import "./TargetSelector.css";
 import { useState } from "react";
+import { labels as labelsGender } from "../../enums/Gender";
+import { labels as labelsNationality } from "../../enums/Nationality";
+import { labels as labelsMission } from "../../enums/Mission";
 
 const loadOptions = (inputValue, callback) => {
     fetch('http://localhost:8000/controllers/TargetController.php')
@@ -156,15 +159,18 @@ Answers.propTypes = {
     answers: PropTypes.array
 }
 
-const Answer = ({ answer }) => (
+const Answer = ({ answer }) => {
+    const { t } = useTranslation();
+
+    return (
     <div className="answer">
         <img src={`targets/${answer.image_path}`} />
-        <span>{answer.gender}</span>
-        <span>{answer.mission}</span>
-        <span>{answer.nationality}</span>
+        <span>{labelsGender(answer.gender, t)}</span>
+        <span>{labelsMission(answer.mission, t)}</span>
+        <span>{labelsNationality(answer.nationality, t)}</span>
         <span>{answer.age}</span>
     </div>
-);
+)};
 
 Answer.propTypes = {
     answer: PropTypes.object

@@ -1,5 +1,59 @@
 {
     "translation": {
+        "enum": {
+            "gender": {
+                "female": "Female",
+                "male": "Male"
+            },
+            "nationality": {
+                "fr": "French",
+                "il": "Israeli",
+                "ru": "Russian",
+                "us": "American"
+            },
+            "mission": {
+                "training": "Training",
+                "theFinalTest": "The Final Test",
+                "theShowstopper": "The Showstopper",
+                "holidayHoarders": "Holiday Hoarders",
+                "worldOfTomorrow": "World of Tomorrow",
+                "theIcon": "The Icon",
+                "landslide": "Landslide",
+                "theAuthor": "The Author",
+                "aGuildedCage": "A Guilded Cage",
+                "aHouseBuiltOnSand": "A House Built on Sand",
+                "club27": "Club 27",
+                "theSource": "The Source",
+                "freedomFighters": "Freedom Fighters",
+                "theVector": "The Vector",
+                "situsInvertus": "Situs Invertus",
+                "patientZero": "Patient Zero",
+                "hokkaidoSnowFestival": "Hokkaido Snow Festival",
+                "nightcall": "Nightcall",
+                "theFinishLine": "The Finish Line",
+                "aSilverTongue": "A Silver Tongue",
+                "threeHeaderSerpent": "Three-Headed Serpent",
+                "embraceOfTheSerpent": "Embrace Of The Serpent",
+                "chasingAGhost": "Chasing a Ghost",
+                "illusionsOfGrandeur": "Illusions Of Grandeur",
+                "anotherLife": "Another Life",
+                "aBitterPill": "A Bitter Pill",
+                "theArkSociety": "The Ark Society",
+                "goldenHandshake": "Golden Handshake",
+                "theLastResort": "The Last Resort",
+                "theLastYardbird": "The Last Yardbird",
+                "thePenAndTheSword": "The Pen and The Sword",
+                "crimeAndPunishment": "Crime and Punishment",
+                "onTopOfTheWorld": "On Top of the World",
+                "deathInTheFamily": "Death in the Family",
+                "theDartmoorGardenShow": "The Dartmoor Garden Show",
+                "apexPredator": "Apex Predator",
+                "endOfAnEra": "End of an Era",
+                "theFarewell": "The Farewell",
+                "untouchable": "Untouchable",
+                "shadowsInTheWater": "Shadows in the Water"
+            }
+        },
         "layout": {
             "header": {
                 "changeLangage": "Change language",

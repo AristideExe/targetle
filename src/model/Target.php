@@ -1,7 +1,7 @@
 <?php
 
 require_once(dirname(__FILE__) ."/Gender.php");
-require_once(dirname(__FILE__) ."/Mission.php");
+require_once(dirname(__FILE__) ."/Destination.php");
 require_once(dirname(__FILE__) ."/Nationality.php");
 
 class Target implements JsonSerializable {
@@ -10,7 +10,7 @@ class Target implements JsonSerializable {
     private string $image_path;
     private string $name;
     private Gender $gender;
-    private Mission $mission;
+    private Destination $destination;
     private int $yearOfBirth;
     private Nationality $nationality;
     private int $hitmanGame;
@@ -20,7 +20,7 @@ class Target implements JsonSerializable {
         string $image_path,
         string $name,
         Gender $gender,
-        Mission $mission,
+        Destination $destination,
         int $yearOfBirth,
         Nationality $nationality,
         int $hitmanGame
@@ -29,7 +29,7 @@ class Target implements JsonSerializable {
         $this->image_path = $image_path;
         $this->name = $name;
         $this->gender = $gender;
-        $this->mission = $mission;
+        $this->destination = $destination;
         $this->yearOfBirth = $yearOfBirth;
         $this->nationality = $nationality;
         $this->hitmanGame = $hitmanGame;
@@ -41,7 +41,7 @@ class Target implements JsonSerializable {
             "image_path"=> $this->image_path,
             "name"=> $this->name,
             "gender"=> $this->gender->name,
-            "mission"=> $this->mission->name,
+            "destination"=> $this->destination->name,
             "yearOfBirth"=> $this->yearOfBirth,
             "nationality"=> $this->nationality->name,
             "hitmanGame"=> $this->hitmanGame,
@@ -54,7 +54,7 @@ class Target implements JsonSerializable {
             "image_path" => ["value" => $this->image_path, "result" => $this->image_path == $target->image_path],
             "name" => ["value" => $this->name, "result" => $this->name == $target->name],
             "gender" => ["value" => $this->gender->name, "result" => $this->gender == $target->gender],
-            "mission" => ["value" => $this->mission->name, "result" => $this->mission == $target->mission],
+            "destination" => ["value" => $this->destination->name, "result" => $this->destination == $target->destination],
             "yearOfBirth" => ["value" => $this->yearOfBirth, "result" => $this->yearOfBirth < $target->yearOfBirth ? 'more' : 
                 ($this->yearOfBirth > $target->yearOfBirth ? 'less' : true)],
             "nationality" => ["value" => $this->nationality->name, "result" => $this->nationality == $target->nationality],

@@ -11,7 +11,7 @@ class TargetDAO {
             $data['image_path'],
             $data['name'],
             Gender::from($data['gender']),
-            Mission::from($data['mission']),
+            Destination::from($data['destination']),
             (int) $data['year_of_birth'],
             Nationality::from($data['nationality']),
             $data['hitman_game']

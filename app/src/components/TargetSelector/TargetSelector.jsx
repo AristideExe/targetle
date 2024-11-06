@@ -5,7 +5,7 @@ import "./TargetSelector.css";
 import { useState } from "react";
 import { labels as labelsGender } from "../../enums/Gender";
 import { labels as labelsNationality } from "../../enums/Nationality";
-import { labels as labelsMission } from "../../enums/Mission";
+import { labels as labelsDestination } from "../../enums/Destination";
 
 const loadOptions = (inputValue, callback) => {
     fetch('http://localhost:8000/controllers/TargetController.php?getAll')
@@ -147,7 +147,7 @@ const Answers = ({ answers = [] }) => {
                 <div className="answersHeader">
                     <span>{t("home.targetSelector.header.target")}</span>
                     <span>{t("home.targetSelector.header.gender")}</span>
-                    <span>{t("home.targetSelector.header.mission")}</span>
+                    <span>{t("home.targetSelector.header.destination")}</span>
                     <span>{t("home.targetSelector.header.nationality")}</span>
                     <span>{t("home.targetSelector.header.yearOfBirth")}</span>
                     <span>{t("home.targetSelector.header.hitmanGame")}</span>
@@ -171,7 +171,7 @@ const Answer = ({ answer }) => {
     <div className="answer">
         <img src={`targets/${answer?.image_path?.value}`} title={answer?.name?.value} />
         <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
-        <AnswerBloc value={labelsMission(answer.mission?.value, t)} result={answer?.mission?.result} />
+        <AnswerBloc value={labelsDestination(answer.destination?.value, t)} result={answer?.destination?.result} />
         <AnswerBloc value={labelsNationality(answer.nationality?.value, t)} result={answer?.nationality?.result} />
         <AnswerBloc value={answer?.yearOfBirth?.value} result={answer?.yearOfBirth?.result} />
         <AnswerBloc value={answer?.hitmanGame?.value} result={answer?.hitmanGame?.result} />

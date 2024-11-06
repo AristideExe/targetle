@@ -149,7 +149,7 @@ const Answers = ({ answers = [] }) => {
                     <span>{t("home.targetSelector.header.gender")}</span>
                     <span>{t("home.targetSelector.header.mission")}</span>
                     <span>{t("home.targetSelector.header.nationality")}</span>
-                    <span>{t("home.targetSelector.header.age")}</span>
+                    <span>{t("home.targetSelector.header.yearOfBirth")}</span>
                     <span>{t("home.targetSelector.header.hitmanGame")}</span>
                 </div>
                 {answers.map(answer => 
@@ -173,7 +173,7 @@ const Answer = ({ answer }) => {
         <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
         <AnswerBloc value={labelsMission(answer.mission?.value, t)} result={answer?.mission?.result} />
         <AnswerBloc value={labelsNationality(answer.nationality?.value, t)} result={answer?.nationality?.result} />
-        <AnswerBloc value={answer?.age?.value} result={answer?.age?.result} />
+        <AnswerBloc value={answer?.yearOfBirth?.value} result={answer?.yearOfBirth?.result} />
         <AnswerBloc value={answer?.hitmanGame?.value} result={answer?.hitmanGame?.result} />
     </div>
 )};

@@ -11,7 +11,7 @@ class Target implements JsonSerializable {
     private string $name;
     private Gender $gender;
     private Mission $mission;
-    private int $age;
+    private int $yearOfBirth;
     private Nationality $nationality;
     private int $hitmanGame;
 
@@ -21,7 +21,7 @@ class Target implements JsonSerializable {
         string $name,
         Gender $gender,
         Mission $mission,
-        int $age,
+        int $yearOfBirth,
         Nationality $nationality,
         int $hitmanGame
     ) {
@@ -30,7 +30,7 @@ class Target implements JsonSerializable {
         $this->name = $name;
         $this->gender = $gender;
         $this->mission = $mission;
-        $this->age = $age;
+        $this->yearOfBirth = $yearOfBirth;
         $this->nationality = $nationality;
         $this->hitmanGame = $hitmanGame;
     }
@@ -42,7 +42,7 @@ class Target implements JsonSerializable {
             "name"=> $this->name,
             "gender"=> $this->gender->name,
             "mission"=> $this->mission->name,
-            "age"=> $this->age,
+            "yearOfBirth"=> $this->yearOfBirth,
             "nationality"=> $this->nationality->name,
             "hitmanGame"=> $this->hitmanGame,
         ];
@@ -55,7 +55,8 @@ class Target implements JsonSerializable {
             "name" => ["value" => $this->name, "result" => $this->name == $target->name],
             "gender" => ["value" => $this->gender->name, "result" => $this->gender == $target->gender],
             "mission" => ["value" => $this->mission->name, "result" => $this->mission == $target->mission],
-            "age" => ["value" => $this->age, "result" => $this->age < $target->age ? 'more' : ($this->age > $target->age ? 'less' : true)],
+            "yearOfBirth" => ["value" => $this->yearOfBirth, "result" => $this->yearOfBirth < $target->yearOfBirth ? 'more' : 
+                ($this->yearOfBirth > $target->yearOfBirth ? 'less' : true)],
             "nationality" => ["value" => $this->nationality->name, "result" => $this->nationality == $target->nationality],
             "hitmanGame" => ["value" => $this->hitmanGame, "result" => $this->hitmanGame == $target->hitmanGame],
         ];

@@ -30,9 +30,10 @@ class TargetDAO {
         return $target;
     }
 
-    public function getAllMinifiedTargets(): array {
+    public function getAllMinifiedTargets(string $startWith): array {
         $db = new Database();
-        $targets = $db->fetchAll("SELECT * FROM targetle.target");
+        $targets = $db->fetchAll("SELECT * FROM targetle.target WHERE LOWER(target.name) LIKE :likeString", 
+            ["likeString" => strtolower($startWith) . "%"]);
         $result = [];
         foreach ($targets as $target) {
             $result[] = $this->hydrateMinified($target);

@@ -8,7 +8,7 @@ import { labels as labelsNationality } from "../../enums/Nationality";
 import { labels as labelsDestination } from "../../enums/Destination";
 
 const loadOptions = (inputValue, callback) => {
-    fetch('http://localhost:8000/controllers/TargetController.php?getAll')
+    fetch(`http://localhost:8000/controllers/TargetController.php?getAll&startWith=${inputValue}`)
     .then(response => {
         if (!response.ok){
             throw new Error('Erreur réseau: ' + response.statusText)

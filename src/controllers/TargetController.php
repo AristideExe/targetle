@@ -9,9 +9,9 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 class TargetController {
-    public function getAll(): array {
+    public function getAll(string $startWith = ""): array {
         $targetDao = new TargetDAO();     
-        return $targetDao->getAllMinifiedTargets();   
+        return $targetDao->getAllMinifiedTargets($startWith);   
     }
 
     public function proposeTarget(string $targetId): array {
@@ -28,7 +28,7 @@ $targetController = new TargetController();
 
 if (isset($_GET)){
     if (isset($_GET["getAll"])){
-        echo json_encode($targetController->getAll());
+        echo json_encode($targetController->getAll($_GET["startWith"] ?? ""));
     }
     else if (isset($_GET["propose"])){
         echo json_encode($targetController->proposeTarget($_GET["propose"]));

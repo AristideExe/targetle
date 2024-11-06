@@ -33,9 +33,10 @@
             },
             "nationality": {
                 "fr": "Français",
-                "il": "Israélien",
+                "it": "Italien⸱ne",
+                "il": "Israélien⸱ne",
                 "ru": "Russe",
-                "us": "Américain"
+                "us": "Américain⸱e"
             }
         },
         "layout": {

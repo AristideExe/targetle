@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <>
             <h2>{t("home.title")}</h2>
-            <TargetSelector submitTarget={(targetId) => targetId == 1}/>
+            <TargetSelector />
         </>
     )
 }

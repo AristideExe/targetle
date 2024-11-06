@@ -36,8 +36,28 @@
     align-items: center;
     text-align: center;
     color: var(--color-white);
+}
+
+.answer .correct {
+    background-color: var(--color-green);
+}
+
+.answer .incorrect, .answer .more, .answer .less {
     background-color: var(--color-red);
 }
+
+.answer .more{
+    background-image: url("up-arrow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.answer .less{
+    background-image: url("down-arrow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 @keyframes fadeInAnimation {
     0% {

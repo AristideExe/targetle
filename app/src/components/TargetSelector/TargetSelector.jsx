@@ -8,7 +8,7 @@ import { labels as labelsNationality } from "../../enums/Nationality";
 import { labels as labelsMission } from "../../enums/Mission";
 
 const loadOptions = (inputValue, callback) => {
-    fetch('http://localhost:8000/controllers/TargetController.php')
+    fetch('http://localhost:8000/controllers/TargetController.php?getAll')
     .then(response => {
         if (!response.ok){
             throw new Error('Erreur réseau: ' + response.statusText)
@@ -85,21 +85,27 @@ const customStyles = {
     }),
 }
 
-const TargetSelector = ({ submitTarget }) => {
+const TargetSelector = () => {
     const { t } = useTranslation();
     const [ selectValue, setSelectValue ] = useState(null);
     const [ answers, setAnswers ] = useState([]);
 
     const handleChange = (value) => {
         setSelectValue(null);
-        setAnswers([value, ...answers ])
 
-        if (submitTarget(value.id)){
-            // console.log("gagner")
-        }
-        else {
-            // console.log("perdut")
-        }
+        fetch(` http://localhost:8000/controllers/TargetController.php?propose=${value.target_id}`)
+        .then(response => {
+            if (!response.ok){
+                throw new Error('Erreur réseau: ' + response.statusText)
+            };
+            return response.json();
+        })
+        .then(proposal => {
+            setAnswers([proposal, ...answers ])
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des données :', error);
+        });
     };
 
     return (
@@ -128,9 +134,7 @@ const TargetSelector = ({ submitTarget }) => {
     );
 };
 
-TargetSelector.propTypes = {
-    submitTarget: PropTypes.func.isRequired
-};
+TargetSelector.propTypes = {};
 
 export default TargetSelector;
 
@@ -148,7 +152,7 @@ const Answers = ({ answers = [] }) => {
                     <span>{t("home.targetSelector.header.age")}</span>
                 </div>
                 {answers.map(answer => 
-                    <Answer answer={answer} key={answer.target_id} />
+                    <Answer answer={answer} key={answer.target_id?.value} />
                 )}
             </div>
         </div>
@@ -161,17 +165,32 @@ Answers.propTypes = {
 
 const Answer = ({ answer }) => {
     const { t } = useTranslation();
-
+    
     return (
     <div className="answer">
-        <img src={`targets/${answer.image_path}`} />
-        <span>{labelsGender(answer.gender, t)}</span>
-        <span>{labelsMission(answer.mission, t)}</span>
-        <span>{labelsNationality(answer.nationality, t)}</span>
-        <span>{answer.age}</span>
+        <img src={`targets/${answer?.image_path?.value}`} />
+        <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
+        <AnswerBloc value={labelsMission(answer.mission?.value, t)} result={answer?.mission?.result} />
+        <AnswerBloc value={labelsNationality(answer.nationality?.value, t)} result={answer?.nationality?.result} />
+        <AnswerBloc value={answer?.age?.value} result={answer?.age?.result} />
     </div>
 )};
 
+
 Answer.propTypes = {
     answer: PropTypes.object
+}
+
+const AnswerBloc = ({ value, result }) => {
+    const className = result === true ? "correct" : result === false ?
+        "incorrect" : result === "less" ? "less" : "more"
+
+    return (
+    
+    <span className={className}>{value}</span>
+)}
+
+AnswerBloc.propTypes = {
+    value: PropTypes.any.isRequired,
+    result: PropTypes.any.isRequired,
 }

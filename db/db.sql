@@ -54,3 +54,8 @@ CREATE TABLE target (
     age           INT         NOT NULL,
     nationality   nationality NOT NULL
 );
+
+CREATE TABLE target_day (
+    date          DATE        PRIMARY KEY,
+    target_id     UUID        NOT NULL REFERENCES target
+)

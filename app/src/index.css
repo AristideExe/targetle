@@ -4,6 +4,7 @@ body {
     --color-main: black;
     --color-red: #ff000e;
     --color-white: white;
+    --color-green: #10460f;
 }
 
 body.dark {

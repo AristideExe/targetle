@@ -83,7 +83,6 @@ export const MISSION = [
 ];
 
 export const labels = (mission, t) => {
-    console.log(mission);
     switch (mission) {
         case TRAINING:
             return t("enum.mission.training")

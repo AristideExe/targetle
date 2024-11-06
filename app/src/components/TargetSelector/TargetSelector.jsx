@@ -169,7 +169,7 @@ const Answer = ({ answer }) => {
     
     return (
     <div className="answer">
-        <img src={`targets/${answer?.image_path?.value}`} />
+        <img src={`targets/${answer?.image_path?.value}`} title={answer?.name?.value} />
         <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
         <AnswerBloc value={labelsMission(answer.mission?.value, t)} result={answer?.mission?.result} />
         <AnswerBloc value={labelsNationality(answer.nationality?.value, t)} result={answer?.nationality?.result} />

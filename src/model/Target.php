@@ -13,6 +13,7 @@ class Target implements JsonSerializable {
     private Mission $mission;
     private int $age;
     private Nationality $nationality;
+    private int $hitmanGame;
 
     public function __construct(
         string $target_id,
@@ -21,7 +22,8 @@ class Target implements JsonSerializable {
         Gender $gender,
         Mission $mission,
         int $age,
-        Nationality $nationality
+        Nationality $nationality,
+        int $hitmanGame
     ) {
         $this->target_id = $target_id;
         $this->image_path = $image_path;
@@ -30,6 +32,7 @@ class Target implements JsonSerializable {
         $this->mission = $mission;
         $this->age = $age;
         $this->nationality = $nationality;
+        $this->hitmanGame = $hitmanGame;
     }
 
     public function jsonSerialize(): array {
@@ -40,7 +43,8 @@ class Target implements JsonSerializable {
             "gender"=> $this->gender->name,
             "mission"=> $this->mission->name,
             "age"=> $this->age,
-            "nationality"=> $this->nationality->name
+            "nationality"=> $this->nationality->name,
+            "hitmanGame"=> $this->hitmanGame,
         ];
     }
 
@@ -53,6 +57,7 @@ class Target implements JsonSerializable {
             "mission" => ["value" => $this->mission->name, "result" => $this->mission == $target->mission],
             "age" => ["value" => $this->age, "result" => $this->age < $target->age ? 'more' : ($this->age > $target->age ? 'less' : true)],
             "nationality" => ["value" => $this->nationality->name, "result" => $this->nationality == $target->nationality],
+            "hitmanGame" => ["value" => $this->hitmanGame, "result" => $this->hitmanGame == $target->hitmanGame],
         ];
     }
 }

@@ -74,7 +74,8 @@
                     "gender": "Genre",
                     "mission": "Mission",
                     "nationality": "Nationalité",
-                    "age": "Âge"
+                    "age": "Âge",
+                    "hitmanGame": "Jeu"
                 }
             }
         },

@@ -52,7 +52,8 @@ CREATE TABLE target (
     gender        gender      NOT NULL,
     mission       mission     NOT NULL,
     age           INT         NOT NULL,
-    nationality   nationality NOT NULL
+    nationality   nationality NOT NULL,
+    hitman_game   INT         NOT NULL,
 );
 
 CREATE TABLE target_day (

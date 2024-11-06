@@ -13,7 +13,8 @@ class TargetDAO {
             Gender::from($data['gender']),
             Mission::from($data['mission']),
             (int) $data['age'],
-            Nationality::from($data['nationality'])
+            Nationality::from($data['nationality']),
+            $data['hitman_game']
         );
 
         return $target;
@@ -46,14 +47,10 @@ class TargetDAO {
         );
     }
 
-    private function chooseTodaysTarget(): string {
+    private function chooseTodaysTarget(): array {
         $db = new Database();
-        return $db->query("INSERT INTO targetle.target_day (date, target_id) 
-            VALUES (CURRENT_DATE, (SELECT target_id FROM targetle.target ORDER BY RANDOM() LIMIT 1) RETURNING target_id)");
-
-        // // On renvoie la cible choisie pour aujourdui
-        // return $this->hydrate($db->fetch("SELECT * from targetle.target WHERE target_id=(
-        //     SELECT target_id FROM targetle.target_day WHERE date=CURRENT_DATE)"));
+        return $db->fetch("INSERT INTO targetle.target_day (date, target_id) 
+            VALUES (CURRENT_DATE, (SELECT target_id FROM targetle.target ORDER BY RANDOM() LIMIT 1)) RETURNING target_id");
     }
 
     public function getTodayTarget(): Target {

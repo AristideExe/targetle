@@ -31,7 +31,6 @@ if (isset($_GET)){
         echo json_encode($targetController->getAll());
     }
     else if (isset($_GET["propose"])){
-        // echo json_encode($targetController->proposeTarget($$_GET["propose"]));
         echo json_encode($targetController->proposeTarget($_GET["propose"]));
     }
 }

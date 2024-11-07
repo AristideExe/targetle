@@ -154,8 +154,12 @@ const Answers = ({ answers = [] }) => {
                     <span>{t("home.targetSelector.header.yearOfBirth")}</span>
                     <span>{t("home.targetSelector.header.hitmanGame")}</span>
                 </div>
-                {answers.map(answer => 
-                    <Answer answer={answer} key={answer.target_id?.value} />
+                {answers.map((answer, index) => 
+                    <Answer 
+                        answer={answer} 
+                        isNew={index === 0}
+                        key={answer.target_id?.value}
+                    />
                 )}
             </div>
         </div>
@@ -166,11 +170,11 @@ Answers.propTypes = {
     answers: PropTypes.array
 }
 
-const Answer = ({ answer }) => {
+const Answer = ({ answer, isNew }) => {
     const { t } = useTranslation();
-    
+
     return (
-    <div className="answer">
+    <div className={`answer ${isNew ? 'last' : ''}`}>
         <img src={`targets/${answer?.image_path?.value}`} title={answer?.name?.value} />
         <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
         <AnswerBloc value={labelsDestination(answer.destination?.value, t)} result={answer?.destination?.result} />
@@ -182,7 +186,8 @@ const Answer = ({ answer }) => {
 
 
 Answer.propTypes = {
-    answer: PropTypes.object
+    answer: PropTypes.object.isRequired,
+    isNew: PropTypes.bool,
 }
 
 const AnswerBloc = ({ value, result }) => {
@@ -190,8 +195,7 @@ const AnswerBloc = ({ value, result }) => {
         "incorrect" : result === "less" ? "less" : "more"
 
     return (
-    
-    <span className={className}>{value}</span>
+        <span className={className}>{value}</span>
 )}
 
 AnswerBloc.propTypes = {

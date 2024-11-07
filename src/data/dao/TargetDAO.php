@@ -30,10 +30,21 @@ class TargetDAO {
         return $target;
     }
 
-    public function getAllMinifiedTargets(string $startWith): array {
+    public function getAllMinifiedTargets(string $startWith = "", array $notIn = []): array {
         $db = new Database();
-        $targets = $db->fetchAll("SELECT * FROM targetle.target WHERE LOWER(target.name) LIKE :likeString", 
-            ["likeString" => strtolower($startWith) . "%"]);
+
+        $startWithCondition = isset($startWith) ? "LOWER(name) LIKE :likeString" : "TRUE";
+        
+        // La condition récupère les identifiants de toutes les cibles déjà choisies et les retire de la liste des cibles proposées
+        $notInCondition = !empty($notIn) ? "target_id NOT IN (SELECT target_id FROM targetle.target 
+            WHERE target_id = ANY(STRING_TO_ARRAY(:notIn , ',')::uuid[]))" : "TRUE";
+            
+        $params = [];
+        if (isset($startWith)) { $params["likeString"] = strtolower($startWith) . "%"; }
+        if (!empty($notIn)) { $params["notIn"] = implode(',', $notIn); }
+
+
+        $targets = $db->fetchAll("SELECT * FROM targetle.target WHERE $startWithCondition AND $notInCondition", $params);
         $result = [];
         foreach ($targets as $target) {
             $result[] = $this->hydrateMinified($target);

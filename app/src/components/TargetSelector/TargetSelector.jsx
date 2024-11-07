@@ -7,8 +7,9 @@ import { labels as labelsGender } from "../../enums/Gender";
 import { labels as labelsNationality } from "../../enums/Nationality";
 import { labels as labelsDestination } from "../../enums/Destination";
 
-const loadOptions = (inputValue, callback) => {
-    fetch(`http://localhost:8000/controllers/TargetController.php?getAll&startWith=${inputValue}`)
+const loadOptions = (inputValue, callback, notIn) => {
+    fetch(`http://localhost:8000/controllers/TargetController.php?
+        getAll&startWith=${inputValue}&notIn=${JSON.stringify(notIn)}`)
     .then(response => {
         if (!response.ok){
             throw new Error('Erreur réseau: ' + response.statusText)
@@ -108,11 +109,12 @@ const TargetSelector = () => {
         });
     };
 
+    const notIn = answers.map(answer => answer.target_id.value);
+
     return (
         <>
             <AsyncSelect
-                cacheOptions
-                loadOptions={loadOptions}
+                loadOptions={(inputValue, callback) => loadOptions(inputValue, callback, notIn)}
                 noOptionsMessage={({inputValue}) => 
                     inputValue !== "" ? (<p>{t("home.targetSelector.noCharacterFound")}</p>) : null
                 }

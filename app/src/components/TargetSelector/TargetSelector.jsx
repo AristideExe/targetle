@@ -148,11 +148,11 @@ const Answers = ({ answers = [] }) => {
             <div className="answers">
                 <div className="answersHeader">
                     <span>{t("home.targetSelector.header.target")}</span>
-                    <span>{t("home.targetSelector.header.gender")}</span>
-                    <span>{t("home.targetSelector.header.destination")}</span>
-                    <span>{t("home.targetSelector.header.nationality")}</span>
-                    <span>{t("home.targetSelector.header.yearOfBirth")}</span>
                     <span>{t("home.targetSelector.header.hitmanGame")}</span>
+                    <span>{t("home.targetSelector.header.gender")}</span>
+                    <span>{t("home.targetSelector.header.nationality")}</span>
+                    <span>{t("home.targetSelector.header.destination")}</span>
+                    <span>{t("home.targetSelector.header.yearOfBirth")}</span>
                 </div>
                 {answers.map((answer, index) => 
                     <Answer 
@@ -176,11 +176,11 @@ const Answer = ({ answer, isNew }) => {
     return (
     <div className={`answer ${isNew ? 'last' : ''}`}>
         <img src={`targets/${answer?.image_path?.value}`} title={answer?.name?.value} />
-        <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
-        <AnswerBloc value={labelsDestination(answer.destination?.value, t)} result={answer?.destination?.result} />
-        <AnswerBloc value={labelsNationality(answer.nationality?.value, t)} result={answer?.nationality?.result} />
-        <AnswerBloc value={answer?.yearOfBirth?.value} result={answer?.yearOfBirth?.result} />
         <AnswerBloc value={answer?.hitmanGame?.value} result={answer?.hitmanGame?.result} />
+        <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
+        <AnswerBloc value={labelsNationality(answer.nationality?.value, t)} result={answer?.nationality?.result} />
+        <AnswerBloc value={labelsDestination(answer.destination?.value, t)} result={answer?.destination?.result} />
+        <AnswerBloc value={answer?.yearOfBirth?.value} result={answer?.yearOfBirth?.result} />
     </div>
 )};
 

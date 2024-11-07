@@ -1,3 +1,4 @@
+export const ICA_TRAINING_FACILITY = 'ICA_TRAINING_FACILITY';
 export const PARIS = 'PARIS';
 export const SAPIENZA = 'SAPIENZA';
 export const MARRAKESH = 'MARRAKESH';
@@ -24,6 +25,7 @@ export const CARPATHIAN_MOUNTAINS = 'CARPATHIAN_MOUNTAINS';
 export const AMBROSE_ISLAND = 'AMBROSE_ISLAND';
 
 export const DESTINATION = [
+    ICA_TRAINING_FACILITY,
     PARIS,
     SAPIENZA,
     MARRAKESH,
@@ -52,6 +54,8 @@ export const DESTINATION = [
 
 export const labels = (destination, t) => {
     switch (destination) {
+        case ICA_TRAINING_FACILITY:
+            return t("enum.destination.icaTrainingFacility")
         case PARIS:
             return t("enum.destination.paris")
         case SAPIENZA:

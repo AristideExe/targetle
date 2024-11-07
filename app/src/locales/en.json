@@ -2,6 +2,7 @@
     "translation": {
         "enum": {
             "destination": {
+                "icaTrainingFacility": "ICA Training Facility",
                 "paris": "Paris",
                 "sapienza": "Sapienza",
                 "marrakesh": "Marrakesh",
@@ -31,12 +32,35 @@
                 "female": "Female",
                 "male": "Male"
             },
-            "nationality": {
+           "nationality": {
+                "ar": "Argentine",
+                "au": "Australian",
+                "bb": "Barbadian",
+                "br": "Brazilian",
+                "cn": "Chinese",
+                "co": "Colombian",
+                "cl": "Chilean",
+                "de": "German",
+                "dk": "Danish",
+                "es": "Spanish",
                 "fr": "French",
+                "gb": "British",
+                "gr": "Greek",
                 "il": "Israeli",
+                "in": "Indian",
                 "it": "Italian",
+                "jp": "Japanese",
+                "kr": "Korean",
+                "lk": "Sri Lankan",
+                "ma": "Moroccan",
+                "my": "Malaysian",
+                "nl": "Dutch",
+                "nz": "New Zealander",
                 "ru": "Russian",
-                "us": "American"
+                "se": "Swedish",
+                "th": "Thai",
+                "us": "American",
+                "za": "South African"
             }
         },
         "layout": {

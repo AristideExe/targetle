@@ -28,7 +28,36 @@ CREATE type destination AS ENUM (
 
 CREATE TYPE gender AS ENUM ('M', 'F');
 
-CREATE TYPE nationality AS ENUM ('FR', 'IL', 'IT', 'RU', 'US');
+CREATE TYPE nationality AS ENUM (
+    'AR',
+    'AU',
+    'BB',
+    'BR',
+    'CN',
+    'CO',
+    'CL',
+    'DE',
+    'DK',
+    'ES',
+    'FR',
+    'GB',
+    'GR',
+    'IL',
+    'IN',
+    'IT',
+    'JP',
+    'KR',
+    'LK',
+    'MA',
+    'MY',
+    'NL',
+    'NZ',
+    'RU',
+    'SE',
+    'TH',
+    'US',
+    'ZA'
+);
 
 CREATE TABLE target (
     target_id     UUID         PRIMARY KEY,

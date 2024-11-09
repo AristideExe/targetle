@@ -143,27 +143,25 @@ export default TargetSelector;
 const Answers = ({ answers = [] }) => {
     const { t } = useTranslation();
 
-    return (
-        <div>
-            <div className="answers">
-                <div className="answersHeader">
-                    <span>{t("home.targetSelector.header.target")}</span>
-                    <span>{t("home.targetSelector.header.hitmanGame")}</span>
-                    <span>{t("home.targetSelector.header.gender")}</span>
-                    <span>{t("home.targetSelector.header.nationality")}</span>
-                    <span>{t("home.targetSelector.header.destination")}</span>
-                    <span>{t("home.targetSelector.header.yearOfBirth")}</span>
-                </div>
-                {answers.map((answer, index) => 
-                    <Answer 
-                        answer={answer} 
-                        isNew={index === 0}
-                        key={answer.target_id?.value}
-                    />
-                )}
+    return answers.length > 0 ? (
+        <div className="answers">
+            <div className="answersHeader">
+                <span>{t("home.targetSelector.header.target")}</span>
+                <span>{t("home.targetSelector.header.hitmanGame")}</span>
+                <span>{t("home.targetSelector.header.gender")}</span>
+                <span>{t("home.targetSelector.header.nationality")}</span>
+                <span>{t("home.targetSelector.header.destination")}</span>
+                <span>{t("home.targetSelector.header.yearOfBirth")}</span>
             </div>
+            {answers.map((answer, index) => 
+                <Answer 
+                    answer={answer} 
+                    isNew={index === 0}
+                    key={answer.target_id?.value}
+                />
+            )}
         </div>
-    )
+    ) : null;
 };
 
 Answers.propTypes = {

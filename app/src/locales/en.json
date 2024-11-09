@@ -70,11 +70,19 @@
                 "switchToDarkMode": "Dark mode"
             },
             "footer": {
-                "credits": "Credits"
+                "home": "Home",
+                "howToPlay": "How To Play"
             }
         },
         "home": {
             "title": "Guess today's target !",
+            "colorIndicators": {
+                "title": "Color indicators",
+                "correct": "Correct",
+                "incorrect": "Incorrect",
+                "more": "More",
+                "less": "Less"
+            },
             "targetSelector": {
                 "noCharacterFound": "No target found",
                 "startTyping": "Start typing target name",
@@ -88,8 +96,8 @@
                 }
             }
         },
-        "credits": {
-            "title": "Credits"
+        "howToPlay": {
+            "title": "How To Play"
         }
     }
 }

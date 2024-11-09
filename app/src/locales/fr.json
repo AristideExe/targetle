@@ -70,11 +70,19 @@
                 "switchToDarkMode": "Mode sombre"
             },
             "footer": {
-                "credits": "Crédits"
+                "home": "Accueil",
+                "howToPlay": "Comment jouer"
             }
         },
         "home": {
             "title": "Devinez la cible du jour !",
+            "colorIndicators": {
+                "title": "Indicateurs de couleurs",
+                "correct": "Correct",
+                "incorrect": "Incorrect",
+                "more": "Supérieur",
+                "less": "Inférieur"
+            },
             "targetSelector": {
                 "noCharacterFound": "Aucune cible trouvée",
                 "startTyping": "Commencez à taper le nom d'une cible",
@@ -88,8 +96,8 @@
                 }
             }
         },
-        "credits": {
-            "title": "Crédits"
+        "howToPlay": {
+            "title": "Comment jouer"
         }
     }
 }

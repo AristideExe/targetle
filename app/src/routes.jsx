@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Layout from "./components/Layout/Layout";
-import Credits from "./components/Credits/Credits";
+import HowToPlay from "./components/HowToPlay/HowToPlay";
 
-export const creditsPaths = "/credits";
+export const homePath = "/";
+export const howToPlayPath = "/howToPlay";
 
 const router = createBrowserRouter([
     {
@@ -11,12 +12,12 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             {
-                path: '/',
+                path: homePath,
                 element: <Home />
             },
             {
-                path: creditsPaths,
-                element: <Credits />
+                path: howToPlayPath,
+                element: <HowToPlay />
             },
         ],
     },

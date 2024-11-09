@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Outlet } from "react-router-dom";
 import "./Layout.css";
-import { creditsPaths } from "../../routes";
+import { homePath, howToPlayPath } from "../../routes";
 
 const Layout = () => {
     const { t, i18n: { changeLanguage, language }} = useTranslation();
@@ -42,9 +42,14 @@ const Layout = () => {
                     <Outlet/>
                 </div>
                 <div className="footer">
-                    <Link to={creditsPaths}>
+                    <Link to={homePath}>
                         <div className="footerLink">
-                            {t("layout.footer.credits")}
+                            {t("layout.footer.home")}
+                        </div>
+                    </Link>
+                    <Link to={howToPlayPath}>
+                        <div className="footerLink">
+                            {t("layout.footer.howToPlay")}
                         </div>
                     </Link>
                 </div>

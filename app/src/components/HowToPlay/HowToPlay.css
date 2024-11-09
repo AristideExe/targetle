@@ -1,0 +1,48 @@
+.gameInfos {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid var(--color-main);
+    border-radius: 10px;
+}
+
+.colorIndicators {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.colorIndicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .7rem  ;
+}
+
+.colorIndicator > div {
+    width: 3rem;
+    height: 3rem;
+}
+
+.colorIndicator .correct {
+    background-color: var(--color-green);
+}
+
+.colorIndicator .incorrect, .colorIndicator .more, .colorIndicator .less {
+    background-color: var(--color-red);
+}
+
+.colorIndicator .more{
+    background-image: url("up-arrow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.colorIndicator .less{
+    background-image: url("down-arrow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -86,6 +86,7 @@
             "targetSelector": {
                 "noCharacterFound": "Aucune cible trouvée",
                 "startTyping": "Commencez à taper le nom d'une cible",
+                "win": "Vous avez gagné !",
                 "header": {
                     "target": "Cible",
                     "gender": "Genre",

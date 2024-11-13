@@ -86,6 +86,7 @@
             "targetSelector": {
                 "noCharacterFound": "No target found",
                 "startTyping": "Start typing target name",
+                "win": "You won !",
                 "header": {
                     "target": "Target",
                     "gender": "Gender",

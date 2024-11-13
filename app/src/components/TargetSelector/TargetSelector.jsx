@@ -35,9 +35,9 @@ const customStyles = {
         ...styles,
         color: "var(--color-white)"
     }),
-    control: (styles) => ({
+    control: (styles, {isDisabled}) => ({
         ...styles,
-        background: "var(--background-color-secondary)",
+        background: isDisabled ? "var(--background-color-tertiary)" : "var(--background-color-secondary)",
         borderColor: "var(--color-main)",
         "img": {
             ...styles["img"],
@@ -90,6 +90,7 @@ const TargetSelector = () => {
     const { t } = useTranslation();
     const [ selectValue, setSelectValue ] = useState(null);
     const [ answers, setAnswers ] = useState([]);
+    const [ selectDisabled, setSelectDisabled ] = useState(false);
 
     const handleChange = (value) => {
         setSelectValue(null);
@@ -102,7 +103,20 @@ const TargetSelector = () => {
             return response.json();
         })
         .then(proposal => {
-            setAnswers([proposal, ...answers ])
+            setSelectDisabled(true);
+            setAnswers([proposal, ...answers ]);
+            setTimeout(() => {
+                // Vérification de la victoire ==> si toutes les clés sont juste alors la cible est la bonne
+                if (Object.values(proposal).find(property => property.result != true)){
+                    setSelectDisabled(false);
+                }
+                else {
+                    // Gagné
+                    alert(t("home.targetSelector.win"))
+                }
+            }, 3000);
+
+            
         })
         .catch(error => {
             console.error('Erreur lors de la récupération des données :', error);
@@ -130,6 +144,7 @@ const TargetSelector = () => {
                 value={selectValue}
                 styles={customStyles}
                 onChange={handleChange}
+                isDisabled={selectDisabled}
             />
             <Answers answers={answers} />
         </>

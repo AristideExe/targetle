@@ -1,4 +1,6 @@
-CREATE type destination AS ENUM (
+CREATE SCHEMA targetle;
+
+CREATE type targetle.destination AS ENUM (
     'ica_training_facility',
     'paris',
     'sapienza',
@@ -26,9 +28,9 @@ CREATE type destination AS ENUM (
     'ambrose_island'
 );
 
-CREATE TYPE gender AS ENUM ('M', 'F');
+CREATE TYPE targetle.gender AS ENUM ('M', 'F');
 
-CREATE TYPE nationality AS ENUM (
+CREATE TYPE targetle.nationality AS ENUM (
     'AR',
     'AU',
     'BB',
@@ -59,18 +61,18 @@ CREATE TYPE nationality AS ENUM (
     'ZA'
 );
 
-CREATE TABLE target (
-    target_id     UUID         PRIMARY KEY,
-    image_path    TEXT        UNIQUE NOT NULL,
-    name          VARCHAR     UNIQUE NOT NULL,
-    gender        gender      NOT NULL,
-    destination   destination NOT NULL,
-    year_of_birth INT         NOT NULL,
-    nationality   nationality NOT NULL,
-    hitman_game   INT         NOT NULL
+CREATE TABLE targetle.target (
+    target_id     UUID                 PRIMARY KEY,
+    image_path    TEXT                 UNIQUE NOT NULL,
+    name          VARCHAR              UNIQUE NOT NULL,
+    gender        targetle.gender      NOT NULL,
+    destination   targetle.destination NOT NULL,
+    year_of_birth INT                  NOT NULL,
+    nationality   targetle.nationality NOT NULL,
+    hitman_game   INT                  NOT NULL
 );
 
-CREATE TABLE target_day (
+CREATE TABLE targetle.target_day (
     date          DATE        PRIMARY KEY,
-    target_id     UUID        NOT NULL REFERENCES target
+    target_id     UUID        NOT NULL REFERENCES targetle.target
 )

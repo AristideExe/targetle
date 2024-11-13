@@ -76,13 +76,6 @@
         },
         "home": {
             "title": "Guess today's target !",
-            "colorIndicators": {
-                "title": "Color indicators",
-                "correct": "Correct",
-                "incorrect": "Incorrect",
-                "more": "More",
-                "less": "Less"
-            },
             "targetSelector": {
                 "noCharacterFound": "No target found",
                 "startTyping": "Start typing target name",
@@ -98,7 +91,15 @@
             }
         },
         "howToPlay": {
-            "title": "How To Play"
+            "title": "How To Play",
+            "gameExplication": "Try to guess the target of the day ! Choose a target and then analyze the different color indicators for each category. The target of the day is chosen randomly.",
+            "colorIndicators": {
+                "title": "Color indicators",
+                "correct": "Correct",
+                "incorrect": "Incorrect",
+                "more": "More",
+                "less": "Less"
+            }
         }
     }
 }

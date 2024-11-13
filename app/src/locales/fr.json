@@ -76,13 +76,6 @@
         },
         "home": {
             "title": "Devinez la cible du jour !",
-            "colorIndicators": {
-                "title": "Indicateurs de couleurs",
-                "correct": "Correct",
-                "incorrect": "Incorrect",
-                "more": "Supérieur",
-                "less": "Inférieur"
-            },
             "targetSelector": {
                 "noCharacterFound": "Aucune cible trouvée",
                 "startTyping": "Commencez à taper le nom d'une cible",
@@ -98,7 +91,15 @@
             }
         },
         "howToPlay": {
-            "title": "Comment jouer"
+            "title": "Comment jouer",
+            "gameExplication": "Essayez de deviner la cible du jour ! Choisissez une cible, puis analysez les différents indicateurs de couleur pour chaque catégorie. La cible du jour est choisie aléatoirement.",
+            "colorIndicators": {
+                "title": "Indicateurs de couleurs",
+                "correct": "Correct",
+                "incorrect": "Incorrect",
+                "more": "Supérieur",
+                "less": "Inférieur"
+            }
         }
     }
 }

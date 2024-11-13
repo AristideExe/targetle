@@ -9,6 +9,10 @@
     border-radius: 10px;
 }
 
+.gameExplication {
+    padding-bottom: 3rem;
+}
+
 .colorIndicators {
     padding-top: 2rem;
     display: flex;

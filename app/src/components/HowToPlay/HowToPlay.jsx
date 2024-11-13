@@ -7,23 +7,25 @@ const HowToPlay = () => {
 
     return (
         <div className="gameInfos">
-            <p>{t("home.colorIndicators.title")}</p>
+            <p className="gameExplication">{t("howToPlay.gameExplication")}</p>
+
+            <p>{t("howToPlay.colorIndicators.title")}</p>
             <div className="colorIndicators">
                 <div className="colorIndicator">
                     <div className="correct"></div>
-                    <span>{t("home.colorIndicators.correct")}</span>
+                    <span>{t("howToPlay.colorIndicators.correct")}</span>
                 </div>
                 <div className="colorIndicator">
                     <div className="incorrect"></div>
-                    <span>{t("home.colorIndicators.incorrect")}</span>
+                    <span>{t("howToPlay.colorIndicators.incorrect")}</span>
                 </div>
                 <div className="colorIndicator">
                     <div className="more"></div>
-                    <span>{t("home.colorIndicators.more")}</span>
+                    <span>{t("howToPlay.colorIndicators.more")}</span>
                 </div>
                 <div className="colorIndicator">
                     <div className="less"></div>
-                    <span>{t("home.colorIndicators.less")}</span>
+                    <span>{t("howToPlay.colorIndicators.less")}</span>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-INSERT INTO target (target_id, image_path, name, gender, destination, year_of_birth, nationality, hitman_game) VALUES
+INSERT INTO targetle.target (target_id, image_path, name, gender, destination, year_of_birth, nationality, hitman_game) VALUES
     ('e67f73e6-7d75-431d-b617-8fc66faa14bd', 'Kalvin-Ritter.webp', 'Kalvin Ritter', 'M', 'ica_training_facility', 1983, 'BB', 1),
     ('e7d47595-3ea4-4ff2-91a2-aaa2c91b4a1a', 'Jasper-Knight.webp', 'Jasper Knight', 'M', 'ica_training_facility', 1972, 'US', 1),
     ('e80b501f-2ff3-4c61-8468-d33c4b264af4', 'Viktor-Novikov.webp', 'Viktor Novikov', 'M', 'paris', 1980, 'RU', 1),

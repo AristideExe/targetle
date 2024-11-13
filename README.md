@@ -1,6 +1,6 @@
 # Guide d'installation
 ___
-Voici les différentes étapes nécéssaires pour installer et lancer le projet. Elles supposent l'installation sur l'ordinateur de `PostgreSQL`, `PHP` et `npm`.
+Voici les différentes étapes nécéssaires pour installer et lancer le projet. Elles supposent l'utilisation d'un environnement Linux et l'installation sur l'ordinateur de `PostgreSQL`, `PHP` et `npm`.
 
 ## Étape 1 : Création de la base de données
 

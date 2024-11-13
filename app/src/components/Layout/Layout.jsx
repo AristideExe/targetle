@@ -42,16 +42,19 @@ const Layout = () => {
                     <Outlet/>
                 </div>
                 <div className="footer">
-                    <Link to={homePath}>
-                        <div className="footerLink">
-                            {t("layout.footer.home")}
-                        </div>
-                    </Link>
-                    <Link to={howToPlayPath}>
-                        <div className="footerLink">
-                            {t("layout.footer.howToPlay")}
-                        </div>
-                    </Link>
+                    <div className="footerLinks">
+                        <Link to={homePath}>
+                            <div className="footerLink">
+                                {t("layout.footer.home")}
+                            </div>
+                        </Link>
+                        <Link to={howToPlayPath}>
+                            <div className="footerLink">
+                                {t("layout.footer.howToPlay")}
+                            </div>
+                        </Link>
+                    </div>
+                    <p>Crédit Aristide Proriol - 2024</p>
                 </div>
             </div>
         </div>

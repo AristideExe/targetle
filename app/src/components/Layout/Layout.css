@@ -42,6 +42,17 @@
     display: flex;
     background-color: var(--background-color-secondary);
     flex: 0 1 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    padding: 0 2rem;
+    color: var(--color-white);
+}
+
+.footerLinks{
+    display: flex;
 }
 
 .footerLink {

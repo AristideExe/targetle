@@ -1,6 +1,6 @@
 # Guide d'installation
 ___
-Voici les différentes étapes nécéssaires pour installer et lancer le projet. Elles supposent l'utilisation d'un environnement Linux et l'installation sur l'ordinateur de `PostgreSQL`, `PHP` et `npm`.
+Voici les différentes étapes nécéssaires pour installer et lancer le projet. Elles supposent l'utilisation d'un environnement Linux et l'installation sur l'ordinateur de `PostgreSQL`, `PHP` et `yarn`.
 
 ## Étape 1 : Création de la base de données
 
@@ -49,10 +49,10 @@ $ cd app
 ```
 Au premier lancement du projet, vous devrez installer les modules nodes afin que l'application fonctionne.
 ```
-$ npm install
+$ yarn
 ```
 Une fois les modules installés, vous pouvez lancer le client web.
 ```
-$ npm run dev
+$ yarn dev
 ```
 Le navigateur s'ouvre, avec l'application fonctionnel. Si ce n'est pas le cas, allez à cette adresse dans votre navigateur : [http://localhost:5173/](http://localhost:5173/)

@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) ."/../../model/Target.php");
 
 class TargetDAO {
 
-    private static function hydrate(array $data): Target {
+    private static function hydrate($data): Target {
         $target = new Target(
             $data['target_id'],
             $data['image_path'],
@@ -30,21 +30,11 @@ class TargetDAO {
         return $target;
     }
 
-    public function getAllMinifiedTargets(string $startWith = "", array $notIn = []): array {
+    public function getAllMinifiedTargets(TargetFilter $filter): array {
         $db = new Database();
 
-        $startWithCondition = isset($startWith) ? "LOWER(name) LIKE :likeString" : "TRUE";
-        
-        // La condition récupère les identifiants de toutes les cibles déjà choisies et les retire de la liste des cibles proposées
-        $notInCondition = !empty($notIn) ? "target_id NOT IN (SELECT target_id FROM targetle.target 
-            WHERE target_id = ANY(STRING_TO_ARRAY(:notIn , ',')::uuid[]))" : "TRUE";
-            
-        $params = [];
-        if (isset($startWith)) { $params["likeString"] = strtolower($startWith) . "%"; }
-        if (!empty($notIn)) { $params["notIn"] = implode(',', $notIn); }
 
-
-        $targets = $db->fetchAll("SELECT * FROM targetle.target WHERE $startWithCondition AND $notInCondition", $params);
+        $targets = $db->fetchAll("SELECT * FROM targetle.target WHERE " . $filter->getCondition(), $filter->getParams());
         $result = [];
         foreach ($targets as $target) {
             $result[] = $this->hydrateMinified($target);

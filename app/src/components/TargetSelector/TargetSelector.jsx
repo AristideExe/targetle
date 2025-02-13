@@ -7,9 +7,14 @@ import { labels as labelsGender } from "../../enums/Gender";
 import { labels as labelsNationality } from "../../enums/Nationality";
 import { labels as labelsDestination } from "../../enums/Destination";
 
+const valuesToFilter = (startWith, notIn) => ({
+    startWith: startWith,
+    notIn: notIn
+})
+
 const loadOptions = (inputValue, callback, notIn) => {
     fetch(`http://localhost:8000/controllers/TargetController.php?
-        getAll&startWith=${inputValue}&notIn=${JSON.stringify(notIn)}`)
+        getAll&filter=${JSON.stringify(valuesToFilter(inputValue, notIn))}`)
     .then(response => {
         if (!response.ok){
             throw new Error('Erreur réseau: ' + response.statusText)

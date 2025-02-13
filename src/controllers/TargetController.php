@@ -1,6 +1,7 @@
 <?php
 
 require_once(dirname(__FILE__) ."/../data/dao/TargetDAO.php");
+require_once(dirname(__FILE__) ."/../filters/TargetFilter.php");
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -9,9 +10,9 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 class TargetController {
-    public function getAll(string $startWith = "", array $notIn = []): array {
-        $targetDao = new TargetDAO();     
-        return $targetDao->getAllMinifiedTargets($startWith, $notIn);   
+    public function getAll(TargetFilter $filter): array {
+        $targetDao = new TargetDAO();
+        return $targetDao->getAllMinifiedTargets($filter);
     }
 
     public function proposeTarget(string $targetId): array {
@@ -24,11 +25,13 @@ class TargetController {
     }
 }
 
+// Endpoint du controller
+
 $targetController = new TargetController();
 
 if (isset($_GET)){
     if (isset($_GET["getAll"])){
-        echo json_encode($targetController->getAll($_GET["startWith"] ?? "", json_decode($_GET["notIn"]) ?? []));
+        echo json_encode($targetController->getAll(new TargetFilter(json_decode($_GET["filter"], true))));
     }
     else if (isset($_GET["propose"])){
         echo json_encode($targetController->proposeTarget($_GET["propose"]));

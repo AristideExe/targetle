@@ -1,6 +1,6 @@
 # Guide d'installation
 ___
-Voici les différentes étapes nécéssaires pour installer et lancer le projet. Elles supposent l'utilisation d'un environnement Linux et l'installation sur l'ordinateur de `PostgreSQL`, `PHP` et `yarn`.
+Voici les différentes étapes nécessaires pour installer et lancer le projet. Elles supposent l'utilisation d'un environnement Linux et l'installation sur l'ordinateur de `PostgreSQL`, `PHP`, `php-pgsql` et `yarn`.
 
 ## Étape 1 : Création de la base de données
 

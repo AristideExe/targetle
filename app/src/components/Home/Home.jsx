@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
-import TargetSelector from "../TargetSelector/TargetSelector";
 import "./Home.css";
+import MainGameMode from "../MainGameMode/MainGameMode.jsx";
+
 
 const Home = () => {
     const { t } = useTranslation();
@@ -8,7 +9,7 @@ const Home = () => {
     return (
         <>
             <h2>{t("home.title")}</h2>
-            <TargetSelector />
+            <MainGameMode />
         </>
     )
 }

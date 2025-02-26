@@ -28,31 +28,29 @@ const Layout = () => {
 
     return (
         <div className="layout">
-            <div className="main">
-                <div className="header">
-                    <Link to={{}} onClick={handleChangeLanguage}>{t("layout.header.changeLangage")}</Link>
-                    <Link to="/" className="title">
-                        <h1>TARGETLE</h1>
-                    </Link>
-                    <Link to={{}} onClick={handleChangeColorScheme}>
-                        {isDark ? t("layout.header.switchToLightMode") : t("layout.header.switchToDarkMode")}
-                    </Link>
-                </div>  
-                <div className="content">
-                    <Outlet/>
-                </div>
-                <div className="footer">
-                    <Link to={homePath}>
-                        <div className="footerLink">
-                            {t("layout.footer.home")}
-                        </div>
-                    </Link>
-                    <Link to={howToPlayPath}>
-                        <div className="footerLink">
-                            {t("layout.footer.howToPlay")}
-                        </div>
-                    </Link>
-                </div>
+            <div className="header">
+                <Link to={{}} onClick={handleChangeLanguage}>{t("layout.header.changeLangage")}</Link>
+                <Link to="/" className="title">
+                    <h1>TARGETLE</h1>
+                </Link>
+                <Link to={{}} onClick={handleChangeColorScheme}>
+                    {isDark ? t("layout.header.switchToLightMode") : t("layout.header.switchToDarkMode")}
+                </Link>
+            </div>
+            <div className="content">
+                <Outlet/>
+            </div>
+            <div className="footer">
+                <Link to={homePath}>
+                    <div className="footerLink">
+                        {t("layout.footer.home")}
+                    </div>
+                </Link>
+                <Link to={howToPlayPath}>
+                    <div className="footerLink">
+                        {t("layout.footer.howToPlay")}
+                    </div>
+                </Link>
             </div>
         </div>
     )

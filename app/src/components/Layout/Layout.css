@@ -1,23 +1,17 @@
 .layout {
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-flow: column;
-}
-
-.main {
-    width: 70%;
-    display: flex;
-    flex-flow: column;
-    flex-grow: 1;
-    padding: 3rem 0;
 }
 
 .header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin-top: 50px;
 }
 
 .header a {
@@ -34,14 +28,18 @@
 }
 
 .content {
-    padding: 3rem 0;
+    /*padding: 3rem 0;*/
     flex: 1 1 auto;
+    width: 50%;
+    margin: 50px 0px;
 }
 
 .footer {
     display: flex;
     background-color: var(--background-color-secondary);
-    flex: 0 1 auto;
+    /*flex: 0 1 auto;*/
+    width: 100%;
+    margin-bottom: 50px;
 }
 
 .footerLink {

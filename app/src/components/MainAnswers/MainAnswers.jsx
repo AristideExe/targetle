@@ -18,13 +18,15 @@ const MainAnswers = ({ answers = [] }) => {
                 <span>{t("home.targetSelector.header.destination")}</span>
                 <span>{t("home.targetSelector.header.yearOfBirth")}</span>
             </div>
-            {answers.map((answer, index) =>
-                <Answer
-                    answer={answer}
-                    isNew={index === 0}
-                    key={answer.target_id?.value}
-                />
-            )}
+            <div className="answersBody">
+                {answers.map((answer, index) =>
+                    <Answer
+                        answer={answer}
+                        isNew={index === 0}
+                        key={answer.target_id?.value}
+                    />
+                )}
+            </div>
         </div>
     ) : null;
 };

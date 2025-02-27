@@ -1,0 +1,12 @@
+.text {
+    color: var(--color-main);
+    background-color: var(--background-color-secondary);
+    padding: 50px 20px;
+}
+
+.button {
+    color: var(--color-main);
+    background-color: var(--background-color-secondary);
+    padding: 10px 20px;
+    font-weight: bold;
+}

@@ -9,9 +9,9 @@ export const targetSelectStyles = {
         ...styles,
         color: "var(--color-white)"
     }),
-    control: (styles) => ({
+    control: (styles, {isDisabled}) => ({
         ...styles,
-        background: "var(--background-color-secondary)",
+        background: isDisabled ? "var(--background-color-tertiary)" : "var(--background-color-secondary)",
         borderColor: "var(--color-main)",
         "img": {
             ...styles["img"],

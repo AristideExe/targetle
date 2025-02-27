@@ -9,7 +9,7 @@ export const valuesToFilter = (values) => ({
     notIn: values.notIn
 })
 
-const TargetSelect = ({ loadOptions, onChange }) => {
+const TargetSelect = ({ loadOptions, onChange, isDisabled = false }) => {
     const { t } = useTranslation();
     const [ selectValue, setSelectValue ] = useState(null);
 
@@ -37,6 +37,7 @@ const TargetSelect = ({ loadOptions, onChange }) => {
                 value={selectValue}
                 styles={targetSelectStyles}
                 onChange={handleChange}
+                isDisabled={isDisabled}
             />
         </>
     );
@@ -45,6 +46,7 @@ const TargetSelect = ({ loadOptions, onChange }) => {
 TargetSelect.propTypes = {
     loadOptions: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
+    isDisabled: PropTypes.bool,
 };
 
 export default TargetSelect;

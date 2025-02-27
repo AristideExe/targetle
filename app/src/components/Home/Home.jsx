@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
-import "./Home.css";
 import MainGameMode from "../MainGameMode/MainGameMode.jsx";
-
+import styles from "./Home.module.css";
 
 const Home = () => {
     const { t } = useTranslation();

@@ -3,14 +3,15 @@ import PropTypes from "prop-types";
 import {labels as labelsGender} from "../../enums/Gender.js";
 import {labels as labelsNationality} from "../../enums/Nationality.js";
 import {labels as labelsDestination} from "../../enums/Destination.js";
-import "./MainAnswers.css";
+import styles from "./MainAnswers.module.css";
+import classNames from "classnames";
 
 const MainAnswers = ({ answers = [] }) => {
     const { t } = useTranslation();
 
     return answers.length > 0 ? (
-        <div className="answers">
-            <div className="answersHeader">
+        <div className={styles.answers}>
+            <div className={styles.answersHeader}>
                 <span>{t("home.targetSelector.header.target")}</span>
                 <span>{t("home.targetSelector.header.hitmanGame")}</span>
                 <span>{t("home.targetSelector.header.gender")}</span>
@@ -18,7 +19,7 @@ const MainAnswers = ({ answers = [] }) => {
                 <span>{t("home.targetSelector.header.destination")}</span>
                 <span>{t("home.targetSelector.header.yearOfBirth")}</span>
             </div>
-            <div className="answersBody">
+            <div className={styles.answersBody}>
                 {answers.map((answer, index) =>
                     <Answer
                         answer={answer}
@@ -41,7 +42,7 @@ const Answer = ({ answer, isNew }) => {
     const { t } = useTranslation();
 
     return (
-        <div className={`answer ${isNew ? 'last' : ''}`}>
+        <div className={classNames(styles.answer, isNew ? styles.last : null)}>
             <img src={`targets/${answer?.image_path?.value}`} title={answer?.name?.value} />
             <AnswerBloc value={answer?.hitmanGame?.value} result={answer?.hitmanGame?.result} />
             <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
@@ -58,8 +59,8 @@ Answer.propTypes = {
 }
 
 const AnswerBloc = ({ value, result }) => {
-    const className = result === true ? "correct" : result === false ?
-        "incorrect" : result === "less" ? "less" : "more"
+    const className = result === true ? styles.correct : result === false ?
+        styles.incorrect : result === "less" ? styles.less : styles.more
 
     return (
         <span className={className}>{value}</span>

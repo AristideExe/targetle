@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Outlet } from "react-router-dom";
-import "./Layout.css";
 import { homePath, howToPlayPath } from "../../routes";
+import styles from "./Layout.module.css";
 
 const Layout = () => {
     const { t, i18n: { changeLanguage, language }} = useTranslation();
@@ -15,24 +15,24 @@ const Layout = () => {
     }
 
     return (
-        <div className="layout">
-            <div className="header">
+        <div className={styles.layout}>
+            <div className={styles.header}>
                 <Link to={{}} onClick={handleChangeLanguage}>{t("layout.header.changeLangage")}</Link>
-                <Link to="/" className="title">
+                <Link to="/" className={styles.title}>
                     <h1>TARGETLE</h1>
                 </Link>
             </div>
-            <div className="content">
+            <div className={styles.content}>
                 <Outlet/>
             </div>
-            <div className="footer">
+            <div className={styles.footer}>
                 <Link to={homePath}>
-                    <div className="footerLink">
+                    <div className={styles.footerLink}>
                         {t("layout.footer.home")}
                     </div>
                 </Link>
                 <Link to={howToPlayPath}>
-                    <div className="footerLink">
+                    <div className={styles.footerLink}>
                         {t("layout.footer.howToPlay")}
                     </div>
                 </Link>

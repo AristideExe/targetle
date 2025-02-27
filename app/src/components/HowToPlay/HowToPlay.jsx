@@ -1,28 +1,28 @@
 import { useTranslation } from "react-i18next";
-import "./HowToPlay.css";
+import styles from "./HowToPlay.module.css";
 
 const HowToPlay = () => {
 
     const { t } = useTranslation();
 
     return (
-        <div className="gameInfos">
+        <div className={styles.gameInfos}>
             <p>{t("home.colorIndicators.title")}</p>
-            <div className="colorIndicators">
-                <div className="colorIndicator">
-                    <div className="correct"></div>
+            <div className={styles.colorIndicators}>
+                <div className={styles.colorIndicator}>
+                    <div className={styles.correct}></div>
                     <span>{t("home.colorIndicators.correct")}</span>
                 </div>
-                <div className="colorIndicator">
-                    <div className="incorrect"></div>
+                <div className={styles.colorIndicator}>
+                    <div className={styles.incorrect}></div>
                     <span>{t("home.colorIndicators.incorrect")}</span>
                 </div>
-                <div className="colorIndicator">
-                    <div className="more"></div>
+                <div className={styles.colorIndicator}>
+                    <div className={styles.more}></div>
                     <span>{t("home.colorIndicators.more")}</span>
                 </div>
-                <div className="colorIndicator">
-                    <div className="less"></div>
+                <div className={styles.colorIndicator}>
+                    <div className={styles.less}></div>
                     <span>{t("home.colorIndicators.less")}</span>
                 </div>
             </div>

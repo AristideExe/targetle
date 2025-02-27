@@ -71,6 +71,8 @@ const MainGameMode = () => {
             <WinModal
                 isVisible={isModalVisible}
                 closeFunc={closeModal}
+                targetName={answers[0]?.name?.value}
+                targetImage={answers[0]?.image_path?.value}
             />
         </>
     )

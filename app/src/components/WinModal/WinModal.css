@@ -1,3 +1,23 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 60%;
+    overflow: auto;
+}
+
+.overlayModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .text {
     color: var(--color-main);
     background-color: var(--background-color-secondary);
@@ -7,6 +27,34 @@
 .button {
     color: var(--color-main);
     background-color: var(--background-color-secondary);
-    padding: 10px 20px;
+    padding: 1rem 1rem;
     font-weight: bold;
+    transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+    background-color: var(--color-red);
+}
+
+.resultsContainer {
+    display: flex;
+    gap: 5rem;
+    padding: 1rem 4rem;
+    align-items: center;
+}
+
+.playstyle {
+    background-color: var(--color-main);
+    color: var(--background-color-tertiary);
+    font-weight: bolder;
+    font-size: larger;
+    padding: .2rem 5rem;
+}
+
+.results {
+    text-align: center;
+}
+
+.results > * {
+    margin: .8rem 0;
 }

@@ -1,4 +1,5 @@
 body {
+    /*Variables */
     --background-color-main: black;
     --background-color-secondary: #19232c;
     --footer-color: rgba(78, 96, 108, 0.3);
@@ -8,6 +9,9 @@ body {
     --color-white: white;
     --color-green: #10460f;
     --background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('backgroundImage.png');
+
+    scrollbar-color: var(--color-red) var(--background-color-tertiary);
+    scrollbar-width: thin;
 }
 
 * {

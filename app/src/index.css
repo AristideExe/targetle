@@ -1,16 +1,12 @@
 body {
-    --background-color-main: white;
+    --background-color-main: black;
     --background-color-secondary: #19232c;
     --background-color-tertiary: #394855;
-    --color-main: black;
+    --color-main: white;
     --color-red: #ff000e;
     --color-white: white;
     --color-green: #10460f;
-}
-
-body.dark {
-    --background-color-main: black;
-    --color-main: white;
+    --background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('backgroundImage.png');
 }
 
 * {
@@ -19,7 +15,7 @@ body.dark {
 }
 
 body {
-    background-color: var(--background-color-main);
+    background: var(--background);
     transition: background-color 0.1s linear;
     font-family: sans-serif;
 }

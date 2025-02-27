@@ -7,23 +7,11 @@ import { homePath, howToPlayPath } from "../../routes";
 const Layout = () => {
     const { t, i18n: { changeLanguage, language }} = useTranslation();
     const [currentLanguage, setCurrentLanguage] = useState(language)
-    const [isDark, setIsDark] = useState(true);
-    
+
     const handleChangeLanguage = () => {
         const newLanguage = currentLanguage === "fr" ? "en" : "fr";
         setCurrentLanguage(newLanguage);
         changeLanguage(newLanguage);
-    }
-
-    const handleChangeColorScheme = () => {
-        if (isDark) {
-            setIsDark(false);
-            document.body.classList.remove('dark');
-        }
-        else {
-            setIsDark(true);
-            document.body.classList.add('dark');
-        }
     }
 
     return (
@@ -32,9 +20,6 @@ const Layout = () => {
                 <Link to={{}} onClick={handleChangeLanguage}>{t("layout.header.changeLangage")}</Link>
                 <Link to="/" className="title">
                     <h1>TARGETLE</h1>
-                </Link>
-                <Link to={{}} onClick={handleChangeColorScheme}>
-                    {isDark ? t("layout.header.switchToLightMode") : t("layout.header.switchToDarkMode")}
                 </Link>
             </div>
             <div className="content">

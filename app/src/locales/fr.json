@@ -65,9 +65,7 @@
         },
         "layout": {
             "header": {
-                "changeLangage": "Changer la langue",
-                "switchToLightMode": "Mode clair",
-                "switchToDarkMode": "Mode sombre"
+                "changeLangage": "Changer la langue"
             },
             "footer": {
                 "home": "Accueil",

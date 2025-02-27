@@ -9,6 +9,7 @@ const MainGameMode = () => {
     const [isModalVisible, setModalVisible] = useState(false);
     const closeModal = () => setModalVisible(false);
     const [ selectDisabled, setSelectDisabled ] = useState(false);
+    const [ isVictory, setVictory ] = useState(false);
 
     const loadOptions = (inputValue, callback) => {
         fetch(`http://localhost:8000/controllers/TargetController.php?
@@ -35,7 +36,7 @@ const MainGameMode = () => {
             setSelectDisabled(false);
         }
         else {
-            // Gagné
+            setVictory(true);
             setModalVisible(true);
         }
     }
@@ -60,11 +61,13 @@ const MainGameMode = () => {
 
     return (
         <>
-            <TargetSelect
-                loadOptions={loadOptions}
-                onChange={onChange}
-                isDisabled={selectDisabled}
-            />
+            {!isVictory && (
+                <TargetSelect
+                    loadOptions={loadOptions}
+                    onChange={onChange}
+                    isDisabled={selectDisabled}
+                />
+            )}
             <MainAnswers
                 answers={answers}
             />

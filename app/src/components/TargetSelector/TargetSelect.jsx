@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import AsyncSelect from "react-select/async";
-import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import {useTranslation} from "react-i18next";
+import {useRef, useState} from "react";
 import {targetSelectStyles} from "./TargetSelectStyles.js";
 
 export const valuesToFilter = (values) => ({
@@ -12,16 +12,22 @@ export const valuesToFilter = (values) => ({
 const TargetSelect = ({ loadOptions, onChange, isDisabled = false }) => {
     const { t } = useTranslation();
     const [ selectValue, setSelectValue ] = useState(null);
+    const select = useRef();
 
     const handleChange = (value) => {
         setSelectValue(null);
         onChange(value)
     }
 
+    window.onkeydown = () => {
+        select.current.focus();
+    };
+
     return (
         <>
             <AsyncSelect
                 loadOptions={(inputValue, callback) => loadOptions(inputValue, callback)}
+                ref={(input) => select.current = input}
                 noOptionsMessage={({inputValue}) => 
                     inputValue !== "" ? (<p>{t("home.targetSelector.noCharacterFound")}</p>) : null
                 }

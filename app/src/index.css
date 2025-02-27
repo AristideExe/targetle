@@ -1,6 +1,7 @@
 body {
     --background-color-main: black;
     --background-color-secondary: #19232c;
+    --footer-color: rgba(78, 96, 108, 0.3);
     --background-color-tertiary: #394855;
     --color-main: white;
     --color-red: #ff000e;

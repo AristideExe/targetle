@@ -1,15 +1,20 @@
 import TargetSelect, {valuesToFilter} from "../TargetSelector/TargetSelect.jsx";
 import MainAnswers from "../MainAnswers/MainAnswers.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import WinModal from "../WinModal/WinModal.jsx";
+import {useLocalStorage} from "@uidotdev/usehooks";
 
 const MainGameMode = () => {
-    const [ answers, setAnswers ] = useState([]);
-    const notIn = answers.map(answer => answer.target_id.value);
+    const [ answers, setAnswers ] = useLocalStorage("mainGameModeAnswers", []);
+    const [ lastPlayed, setLastPlayed ] = useLocalStorage("mainGameModeLastPlayed", new Date().toLocaleDateString());
+    const [ isVictory, setVictory ] = useLocalStorage("mainGameModeVictoryToday", false);
+
     const [isModalVisible, setModalVisible] = useState(false);
-    const closeModal = () => setModalVisible(false);
     const [ selectDisabled, setSelectDisabled ] = useState(false);
-    const [ isVictory, setVictory ] = useState(false);
+
+    const notIn = answers.map(answer => answer.target_id.value);
+
+    const closeModal = () => setModalVisible(false);
 
     const loadOptions = (inputValue, callback) => {
         fetch(`http://localhost:8000/controllers/TargetController.php?
@@ -58,6 +63,16 @@ const MainGameMode = () => {
                 console.error('Erreur lors de la récupération des données :', error);
             });
     };
+
+    useEffect(() => {
+        const currentDate = new Date().toLocaleDateString()
+        if (lastPlayed !== currentDate){
+            console.log("toto");
+            setVictory(false);
+            setAnswers([]);
+            setLastPlayed(currentDate);
+        }
+    }, []);
 
     return (
         <>

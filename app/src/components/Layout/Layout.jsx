@@ -3,19 +3,22 @@ import { useTranslation } from "react-i18next";
 import { Link, Outlet } from "react-router-dom";
 import { homePath, howToPlayPath } from "../../routes";
 import styles from "./Layout.module.css";
+import {useEffect} from "react";
 
 const Layout = () => {
     const { t, i18n: { changeLanguage, language }} = useTranslation();
-
     // On récupère la langue du local storage et on la set pour l'appli
     const [currentLanguage, setCurrentLanguage] = useLocalStorage('language', language);
-    changeLanguage(currentLanguage);
 
     const handleChangeLanguage = () => {
         const newLanguage = currentLanguage === "fr" ? "en" : "fr";
         setCurrentLanguage(newLanguage);
         changeLanguage(newLanguage);
     }
+
+    useEffect(() => {
+        changeLanguage(currentLanguage);
+    }, []);
 
     return (
         <div className={styles.layout}>

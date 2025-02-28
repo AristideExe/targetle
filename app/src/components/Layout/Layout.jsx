@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLocalStorage } from "@uidotdev/usehooks";
 import { useTranslation } from "react-i18next";
 import { Link, Outlet } from "react-router-dom";
 import { homePath, howToPlayPath } from "../../routes";
@@ -6,7 +6,10 @@ import styles from "./Layout.module.css";
 
 const Layout = () => {
     const { t, i18n: { changeLanguage, language }} = useTranslation();
-    const [currentLanguage, setCurrentLanguage] = useState(language)
+
+    // On récupère la langue du local storage et on la set pour l'appli
+    const [currentLanguage, setCurrentLanguage] = useLocalStorage('language', language);
+    changeLanguage(currentLanguage);
 
     const handleChangeLanguage = () => {
         const newLanguage = currentLanguage === "fr" ? "en" : "fr";

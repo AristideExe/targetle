@@ -14,6 +14,11 @@ body {
     scrollbar-width: thin;
 }
 
+@font-face {
+    font-family: 'Hitman Font';
+    src: local('M Ying Hei PRC W48 W7'), url('fonts/hitmanFont.ttf') format('truetype');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +27,8 @@ body {
 body {
     background: var(--background);
     transition: background-color 0.1s linear;
-    font-family: sans-serif;
+    /*font-family: sans-serif;*/
+    font-family: "Hitman Font", serif;
 }
 
 body * {

@@ -92,6 +92,13 @@
                     "yearOfBirth": "Year of birth",
                     "hitmanGame": "Game"
                 }
+            },
+            "winModal": {
+              "playstyle": "SA / S0",
+              "resultText": "Congratulation you won ! Try out our other gamemodes (still in development)",
+              "numberOfVictories": "Number of wins",
+              "dailyStreak": "Daily streak",
+              "closeModal": "Accept"
             }
         },
         "howToPlay": {

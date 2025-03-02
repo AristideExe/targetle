@@ -31,6 +31,7 @@
     font-weight: bold;
     transition: all 0.1s ease-in-out;
     font-size: larger;
+    text-transform: uppercase;
 }
 
 .button:hover {
@@ -54,6 +55,7 @@
     font-weight: bolder;
     font-size: larger;
     padding: .2rem 5rem;
+    text-transform: uppercase;
 }
 
 .results {
@@ -78,6 +80,7 @@
 .statistics span {
     color: var(--color-red);
     font-size: 10px;
+    text-transform: uppercase;
 }
 
 .statistics p {

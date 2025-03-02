@@ -92,6 +92,13 @@
                     "yearOfBirth": "Année de naissance",
                     "hitmanGame": "Jeu"
                 }
+            },
+            "winModal": {
+                "playstyle": "Assassin silencieux",
+                "resultText": "Félicitation vous avez gagné ! Essayez nos autres modes de jeu (en cours de développement)",
+                "numberOfVictories": "Nombre de victoires",
+                "dailyStreak": "Série quotidienne",
+                "closeModal": "Valider"
             }
         },
         "howToPlay": {

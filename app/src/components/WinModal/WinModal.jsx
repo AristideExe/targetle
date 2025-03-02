@@ -22,16 +22,16 @@ const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage, numbe
                     <div className={styles.resultsContainer}>
                         <img src={`targets/${targetImage}`} />
                         <div className={styles.results}>
-                            <span className={styles.playstyle}>ASSASSIN SILENCIEUX</span>
-                            <p>Félicitation vous avez gagné ! Essayez nos<br/> autres modes de jeu (en cours de développement)</p>
+                            <span className={styles.playstyle}>{t("home.winModal.playstyle")}</span>
+                            <p>{t("home.winModal.resultText")}</p>
                             <div className={styles.statistics}>
                                 <div></div>
                                 <div>
-                                    <span>NOMBRE DE VICTOIRES:</span>
+                                    <span>{t("home.winModal.numberOfVictories")}:</span>
                                     <p>{numberOfVictories}</p>
                                 </div>
                                 <div>
-                                    <span>SÉRIE QUOTIDIENNE:</span>
+                                    <span>{t("home.winModal.dailyStreak")}:</span>
                                     <p>{dailyStreak}</p>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@ const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage, numbe
             )}
             <Link to={{}} onClick={closeFunc} className={styles.button}>
                 <Icon icon={ACCEPT} className={styles.icon}/>
-                VALIDER
+                {t("home.winModal.closeModal")}
             </Link>
         </ReactModal>
     )

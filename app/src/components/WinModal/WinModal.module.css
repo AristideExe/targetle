@@ -63,3 +63,23 @@
 .results > * {
     margin: .8rem 0;
 }
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px dotted var(--color-main);
+}
+
+.statistics > div {
+    padding: 0.5rem 0rem;
+    text-align: left;
+}
+
+.statistics span {
+    color: var(--color-red);
+    font-size: 10px;
+}
+
+.statistics p {
+    font-size: large;
+}

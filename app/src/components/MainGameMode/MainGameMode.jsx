@@ -8,6 +8,8 @@ const MainGameMode = () => {
     const [ answers, setAnswers ] = useLocalStorage("mainGameModeAnswers", []);
     const [ lastPlayed, setLastPlayed ] = useLocalStorage("mainGameModeLastPlayed", new Date().toLocaleDateString());
     const [ isVictory, setVictory ] = useLocalStorage("mainGameModeVictoryToday", false);
+    const [ numberOfVictories, setNumberOfVictories ] = useLocalStorage("mainGameModeNumberOfVictories", 0);
+    const [ dailyStreak, setDailyStreak ] = useLocalStorage("mainGameModeDailyStreak", 0);
 
     const [isModalVisible, setModalVisible] = useState(false);
     const [ selectDisabled, setSelectDisabled ] = useState(false);
@@ -42,6 +44,8 @@ const MainGameMode = () => {
         }
         else {
             setVictory(true);
+            setNumberOfVictories(numberOfVictories + 1);
+            setDailyStreak(dailyStreak + 1);
             setModalVisible(true);
         }
     }
@@ -66,8 +70,12 @@ const MainGameMode = () => {
 
     useEffect(() => {
         const currentDate = new Date().toLocaleDateString()
+        const yesterday = new Date(new Date().setDate(new Date().getDate()-1));
         if (lastPlayed !== currentDate){
-            console.log("toto");
+            // Si la personne n'a pas joué hier ou n'a pas gagné, on reset son daily streak
+            if (lastPlayed !== yesterday.toLocaleDateString() || !isVictory){
+                setDailyStreak(0);
+            }
             setVictory(false);
             setAnswers([]);
             setLastPlayed(currentDate);
@@ -92,6 +100,8 @@ const MainGameMode = () => {
                 closeFunc={closeModal}
                 targetName={answers[0]?.name?.value}
                 targetImage={answers[0]?.image_path?.value}
+                numberOfVictories={numberOfVictories}
+                dailyStreak={dailyStreak}
             />
         </>
     )

@@ -6,7 +6,7 @@ import styles from "./WinModal.module.css";
 import Icon from "../Icon/Icon.jsx";
 import {ACCEPT} from "../Icon/IconsEnum.js";
 
-const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage }) => {
+const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage, numberOfVictories, dailyStreak }) => {
     const { t } = useTranslation();
 
     return (
@@ -24,6 +24,17 @@ const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage }) => 
                         <div className={styles.results}>
                             <span className={styles.playstyle}>ASSASSIN SILENCIEUX</span>
                             <p>Félicitation vous avez gagné ! Essayez nos<br/> autres modes de jeu (en cours de développement)</p>
+                            <div className={styles.statistics}>
+                                <div></div>
+                                <div>
+                                    <span>NOMBRE DE VICTOIRES:</span>
+                                    <p>{numberOfVictories}</p>
+                                </div>
+                                <div>
+                                    <span>SÉRIE QUOTIDIENNE:</span>
+                                    <p>{dailyStreak}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -41,6 +52,8 @@ WinModal.propTypes = {
     closeFunc: PropTypes.func,
     targetName: PropTypes.string,
     targetImage: PropTypes.string,
+    numberOfVictories: PropTypes.number,
+    dailyStreak: PropTypes.number,
 }
 
 export default WinModal;

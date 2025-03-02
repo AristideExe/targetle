@@ -3,6 +3,8 @@ import {useTranslation} from "react-i18next";
 import ReactModal from 'react-modal';
 import {Link} from "react-router-dom";
 import styles from "./WinModal.module.css";
+import Icon from "../Icon/Icon.jsx";
+import {ACCEPT} from "../Icon/IconsEnum.js";
 
 const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage }) => {
     const { t } = useTranslation();
@@ -13,6 +15,7 @@ const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage }) => 
             shouldFocusAfterRender={false}
             className={styles.modal}
             overlayClassName={styles.overlayModal}
+            shouldCloseOnEsc
         >
             {targetName && targetImage && (
                 <div className={styles.text}>
@@ -25,7 +28,10 @@ const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage }) => 
                     </div>
                 </div>
             )}
-            <Link to={{}} onClick={closeFunc} className={styles.button}>VALIDER</Link>
+            <Link to={{}} onClick={closeFunc} className={styles.button}>
+                <Icon icon={ACCEPT} className={styles.icon}/>
+                VALIDER
+            </Link>
         </ReactModal>
     )
 }

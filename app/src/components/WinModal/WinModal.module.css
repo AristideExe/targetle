@@ -30,10 +30,15 @@
     padding: 1rem 1rem;
     font-weight: bold;
     transition: all 0.1s ease-in-out;
+    font-size: larger;
 }
 
 .button:hover {
     background-color: var(--color-red);
+}
+
+.button .icon {
+    padding: 0px 10px;
 }
 
 .resultsContainer {

@@ -6,7 +6,7 @@ import classNames from "classnames";
 const Icon = ({ icon, className }) => (
     <img
         className={classNames(styles.icon, className)}
-        src={`icons/${icon}`}
+        src={`icons/${icon}.png`}
         alt={icon}
     />
 );

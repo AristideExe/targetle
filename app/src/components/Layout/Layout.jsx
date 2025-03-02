@@ -4,6 +4,8 @@ import { Link, Outlet } from "react-router-dom";
 import { homePath, howToPlayPath } from "../../routes";
 import styles from "./Layout.module.css";
 import {useEffect} from "react";
+import Icon from "../Icon/Icon.jsx";
+import {INFORMATION, TARGET} from "../Icon/IconsEnum.js";
 
 const Layout = () => {
     const { t, i18n: { changeLanguage, language }} = useTranslation();
@@ -32,15 +34,13 @@ const Layout = () => {
                 <Outlet/>
             </div>
             <div className={styles.footer}>
-                <Link to={homePath}>
-                    <div className={styles.footerLink}>
-                        {t("layout.footer.home")}
-                    </div>
+                <Link to={homePath} className={styles.footerLink}>
+                    <Icon icon={TARGET} className={styles.footerIcon}/>
+                    {t("layout.footer.home")}
                 </Link>
-                <Link to={howToPlayPath}>
-                    <div className={styles.footerLink}>
-                        {t("layout.footer.howToPlay")}
-                    </div>
+                <Link to={howToPlayPath} className={styles.footerLink}>
+                    <Icon icon={INFORMATION} className={styles.footerIcon}/>
+                    {t("layout.footer.howToPlay")}
                 </Link>
             </div>
         </div>

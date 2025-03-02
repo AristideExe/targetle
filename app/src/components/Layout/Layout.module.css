@@ -34,21 +34,31 @@
 }
 
 .footer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     background-color: var(--footer-color);
+    height: 8vh;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 4rem;
 }
 
 .footerLink {
-    padding: 1rem 6rem;
+    height: 100%;
     color: var(--color-white);
     text-transform: uppercase;
     font-weight: bolder;
     transition: all 0.1s ease-in-out;
+    display: flex;
+    align-items: center;
+    padding: 0rem 1rem;
 }
 
 .footerLink:hover {
     background-color: var(--color-red);
     transform: scale(1.05);
+}
+
+.footerLink .footerIcon {
+    height: 3rem;
+    padding: 0 1rem;
 }

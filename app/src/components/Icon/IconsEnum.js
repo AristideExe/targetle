@@ -1,7 +1,10 @@
-export const ACCEPT = "accept.png";
-export const PLANE = "plane.png";
+export const ACCEPT = "accept";
+export const INFORMATION = "information";
+export const PLANE = "plane";
+export const TARGET = "target";
 
 export const ICONS = [
     ACCEPT,
-    PLANE
+    PLANE,
+    TARGET
 ]

@@ -6,7 +6,7 @@ import {labels as labelsDestination} from "../../enums/Destination.js";
 import styles from "./MainAnswers.module.css";
 import classNames from "classnames";
 
-const MainAnswers = ({ answers = [] }) => {
+const MainAnswers = ({ answers = [], isVictory }) => {
     const { t } = useTranslation();
 
     return answers.length > 0 ? (
@@ -23,7 +23,7 @@ const MainAnswers = ({ answers = [] }) => {
                 {answers.map((answer, index) =>
                     <Answer
                         answer={answer}
-                        isNew={index === 0}
+                        isNew={index === 0 && !isVictory}
                         key={answer.target_id?.value}
                     />
                 )}
@@ -33,7 +33,8 @@ const MainAnswers = ({ answers = [] }) => {
 };
 
 MainAnswers.propTypes = {
-    answers: PropTypes.array
+    answers: PropTypes.array,
+    isVictory: PropTypes.bool,
 }
 
 export default MainAnswers;

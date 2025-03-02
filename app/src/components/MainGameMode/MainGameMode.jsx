@@ -85,6 +85,7 @@ const MainGameMode = () => {
             )}
             <MainAnswers
                 answers={answers}
+                isVictory={isVictory}
             />
             <WinModal
                 isVisible={isModalVisible}

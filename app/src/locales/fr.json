@@ -96,6 +96,7 @@
             "winModal": {
                 "playstyle": "Assassin silencieux",
                 "resultText": "Félicitation vous avez gagné ! Essayez nos autres modes de jeu (en cours de développement)",
+                "numberOfAttempts": "Nombre d'essais",
                 "numberOfVictories": "Nombre de victoires",
                 "dailyStreak": "Série quotidienne",
                 "closeModal": "Valider"

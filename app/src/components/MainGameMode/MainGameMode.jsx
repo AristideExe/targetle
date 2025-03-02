@@ -102,6 +102,7 @@ const MainGameMode = () => {
                 targetImage={answers[0]?.image_path?.value}
                 numberOfVictories={numberOfVictories}
                 dailyStreak={dailyStreak}
+                numberOfAttempts={answers.length}
             />
         </>
     )

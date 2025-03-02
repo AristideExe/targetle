@@ -94,8 +94,9 @@
                 }
             },
             "winModal": {
-              "playstyle": "SA / S0",
+              "playstyle": "SA / SO",
               "resultText": "Congratulation you won ! Try out our other gamemodes (still in development)",
+              "numberOfAttempts": "Number of attempts",
               "numberOfVictories": "Number of wins",
               "dailyStreak": "Daily streak",
               "closeModal": "Accept"

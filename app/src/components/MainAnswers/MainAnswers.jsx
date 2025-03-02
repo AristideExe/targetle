@@ -1,5 +1,6 @@
 import {useTranslation} from "react-i18next";
 import PropTypes from "prop-types";
+import {labels as labelsGame} from "../../enums/Game.js";
 import {labels as labelsGender} from "../../enums/Gender.js";
 import {labels as labelsNationality} from "../../enums/Nationality.js";
 import {labels as labelsDestination} from "../../enums/Destination.js";
@@ -45,7 +46,7 @@ const Answer = ({ answer, isNew }) => {
     return (
         <div className={classNames(styles.answer, isNew ? styles.last : null)}>
             <img src={`targets/${answer?.image_path?.value}`} title={answer?.name?.value} />
-            <AnswerBloc value={answer?.hitmanGame?.value} result={answer?.hitmanGame?.result} />
+            <AnswerBloc value={labelsGame(answer?.hitmanGame?.value, t)} result={answer?.hitmanGame?.result} />
             <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
             <AnswerBloc value={labelsNationality(answer.nationality?.value, t)} result={answer?.nationality?.result} />
             <AnswerBloc value={labelsDestination(answer.destination?.value, t)} result={answer?.destination?.result} />

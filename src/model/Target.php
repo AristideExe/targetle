@@ -3,6 +3,7 @@
 require_once(dirname(__FILE__) ."/Gender.php");
 require_once(dirname(__FILE__) ."/Destination.php");
 require_once(dirname(__FILE__) ."/Nationality.php");
+require_once(dirname(__FILE__) ."/Game.php");
 
 class Target implements JsonSerializable {
 
@@ -13,7 +14,7 @@ class Target implements JsonSerializable {
     private Destination $destination;
     private int $yearOfBirth;
     private Nationality $nationality;
-    private int $hitmanGame;
+    private Game $hitmanGame;
 
     public function __construct(
         string $target_id,
@@ -23,7 +24,7 @@ class Target implements JsonSerializable {
         Destination $destination,
         int $yearOfBirth,
         Nationality $nationality,
-        int $hitmanGame
+        Game $hitmanGame
     ) {
         $this->target_id = $target_id;
         $this->image_path = $image_path;
@@ -44,7 +45,7 @@ class Target implements JsonSerializable {
             "destination"=> $this->destination->name,
             "yearOfBirth"=> $this->yearOfBirth,
             "nationality"=> $this->nationality->name,
-            "hitmanGame"=> $this->hitmanGame,
+            "hitmanGame"=> $this->hitmanGame->name,
         ];
     }
 
@@ -58,7 +59,7 @@ class Target implements JsonSerializable {
             "yearOfBirth" => ["value" => $this->yearOfBirth, "result" => $this->yearOfBirth < $target->yearOfBirth ? 'more' : 
                 ($this->yearOfBirth > $target->yearOfBirth ? 'less' : true)],
             "nationality" => ["value" => $this->nationality->name, "result" => $this->nationality == $target->nationality],
-            "hitmanGame" => ["value" => $this->hitmanGame, "result" => $this->hitmanGame == $target->hitmanGame],
+            "hitmanGame" => ["value" => $this->hitmanGame->name, "result" => $this->hitmanGame == $target->hitmanGame],
         ];
     }
 }

@@ -28,6 +28,11 @@
                 "carpathianMountains": "Carpates",
                 "ambroseIsland": "Île d'Ambrose"
             },
+            "game": {
+                "woa1": "Hitman World Of Assassination 1",
+                "woa2": "Hitman World Of Assassination 2",
+                "woa3": "Hitman World Of Assassination 3"
+            },
             "gender": {
                 "female": "Femme",
                 "male": "Homme"

@@ -14,7 +14,7 @@ class TargetDAO {
             Destination::from($data['destination']),
             (int) $data['year_of_birth'],
             Nationality::from($data['nationality']),
-            $data['hitman_game']
+            Game::from($data['hitman_game'])
         );
 
         return $target;

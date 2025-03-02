@@ -61,6 +61,12 @@ CREATE TYPE targetle.nationality AS ENUM (
     'ZA'
 );
 
+CREATE TYPE targetle.game AS ENUM (
+    'WOA1',
+    'WOA2',
+    'WOA3'
+);
+
 CREATE TABLE targetle.target (
     target_id     UUID                 PRIMARY KEY,
     image_path    TEXT                 UNIQUE NOT NULL,
@@ -69,7 +75,7 @@ CREATE TABLE targetle.target (
     destination   targetle.destination NOT NULL,
     year_of_birth INT                  NOT NULL,
     nationality   targetle.nationality NOT NULL,
-    hitman_game   INT                  NOT NULL
+    hitman_game   targetle.game        NOT NULL
 );
 
 CREATE TABLE targetle.target_day (

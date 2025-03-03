@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import styles from "./WinModal.module.css";
 import Icon from "../Icon/Icon.jsx";
 import {ACCEPT} from "../Icon/IconsEnum.js";
+import {randomLabel as randomPlaystyle} from "../../enums/Playstyle.js";
 
 const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage, numberOfVictories, dailyStreak, numberOfAttempts }) => {
     const { t } = useTranslation();
@@ -22,7 +23,7 @@ const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage, numbe
                     <div className={styles.resultsContainer}>
                         <img src={`targets/${targetImage}`} />
                         <div className={styles.results}>
-                            <span className={styles.playstyle}>{t("home.winModal.playstyle")}</span>
+                            <span className={styles.playstyle}>{randomPlaystyle(t)}</span>
                             <p>{t("home.winModal.resultText")}</p>
                             <div className={styles.statistics}>
                                 <div>

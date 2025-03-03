@@ -11,7 +11,7 @@ class TargetDAO {
             $data['image_path'],
             $data['name'],
             Gender::from($data['gender']),
-            Destination::from($data['destination']),
+            new Destination(($data['destination'])),
             (int) $data['year_of_birth'],
             Nationality::from($data['nationality']),
             Game::from($data['hitman_game'])
@@ -32,7 +32,6 @@ class TargetDAO {
 
     public function getAllMinifiedTargets(TargetFilter $filter): array {
         $db = new Database();
-
 
         $targets = $db->fetchAll("SELECT * FROM targetle.target WHERE " . $filter->getCondition(), $filter->getParams());
         $result = [];

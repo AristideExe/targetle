@@ -1,33 +1,6 @@
 {
     "translation": {
         "enum": {
-            "destination": {
-                "icaTrainingFacility": "ICA Training Facility",
-                "paris": "Paris",
-                "sapienza": "Sapienza",
-                "marrakesh": "Marrakesh",
-                "bangkok": "Bangkok",
-                "colorado": "Colorado",
-                "hokkaido": "Hokkaidō",
-                "hawkesBay": "Hawke's Bay",
-                "miami": "Miami",
-                "santaFortuna": "Santa Fortuna",
-                "mumbai": "Mumbai",
-                "whittletonCreek": "Whittleton Creek",
-                "isleOfSgail": "Isle of Sgàil",
-                "newYork": "New York",
-                "havenIsland": "Haven Island",
-                "himmelstein": "Himmelstein",
-                "hantuPort": "Hantu Port",
-                "siberia": "Siberia",
-                "dubai": "Dubai",
-                "dartmoor": "Dartmoor",
-                "berlin": "Berlin",
-                "chongqing": "Chongqing",
-                "mendoza": "Mendoza",
-                "carpathianMountains": "Carpathian Mountains",
-                "ambroseIsland": "Ambrose Island"
-            },
             "game": {
               "woa1": "Hitman World Of Assassination 1",
               "woa2": "Hitman World Of Assassination 2",

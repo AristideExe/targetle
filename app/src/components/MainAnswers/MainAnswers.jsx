@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import {labels as labelsGame} from "../../enums/Game.js";
 import {labels as labelsGender} from "../../enums/Gender.js";
 import {labels as labelsNationality} from "../../enums/Nationality.js";
-import {labels as labelsDestination} from "../../enums/Destination.js";
 import styles from "./MainAnswers.module.css";
 import classNames from "classnames";
+import useLocalize from "../../locales/Localize.js";
 
 const MainAnswers = ({ answers = [], isVictory }) => {
     const { t } = useTranslation();
@@ -42,6 +42,7 @@ export default MainAnswers;
 
 const Answer = ({ answer, isNew }) => {
     const { t } = useTranslation();
+    const { localize } = useLocalize();
 
     return (
         <div className={classNames(styles.answer, isNew ? styles.last : null)}>
@@ -49,7 +50,7 @@ const Answer = ({ answer, isNew }) => {
             <AnswerBloc value={labelsGame(answer?.hitmanGame?.value, t)} result={answer?.hitmanGame?.result} />
             <AnswerBloc value={labelsGender(answer?.gender?.value, t)} result={answer?.gender?.result} />
             <AnswerBloc value={labelsNationality(answer.nationality?.value, t)} result={answer?.nationality?.result} />
-            <AnswerBloc value={labelsDestination(answer.destination?.value, t)} result={answer?.destination?.result} />
+            <AnswerBloc value={localize(answer.destination?.value) } result={answer?.destination?.result} />
             <AnswerBloc value={answer?.yearOfBirth?.value} result={answer?.yearOfBirth?.result} />
         </div>
     )};

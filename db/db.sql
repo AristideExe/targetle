@@ -1,32 +1,6 @@
 CREATE SCHEMA targetle;
 
-CREATE type targetle.destination AS ENUM (
-    'ica_training_facility',
-    'paris',
-    'sapienza',
-    'marrakesh',
-    'bangkok',
-    'colorado',
-    'hokkaido',
-    'hawkes_bay',
-    'miami',
-    'santa_fortuna',
-    'mumbai',
-    'whittleton_creek',
-    'isle_of_sgail',
-    'new_york',
-    'haven_island',
-    'himmelstein',
-    'hantu_port',
-    'siberia',
-    'dubai',
-    'dartmoor',
-    'berlin',
-    'chongqing',
-    'mendoza',
-    'carpathian_mountains',
-    'ambrose_island'
-);
+CREATE TYPE lang as ENUM ('en', 'fr');
 
 CREATE TYPE targetle.gender AS ENUM ('M', 'F');
 
@@ -67,12 +41,24 @@ CREATE TYPE targetle.game AS ENUM (
     'WOA3'
 );
 
+CREATE TABLE targetle.destination (
+    destination_id UUID PRIMARY KEY,
+    label TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE targetle.t_destination (
+    destination_id UUID REFERENCES targetle.destination,
+    language lang NOT NULL,
+    label TEXT NOT NULL,
+    PRIMARY KEY (destination_id, language)
+);
+
 CREATE TABLE targetle.target (
     target_id     UUID                 PRIMARY KEY,
     image_path    TEXT                 UNIQUE NOT NULL,
     name          VARCHAR              UNIQUE NOT NULL,
     gender        targetle.gender      NOT NULL,
-    destination   targetle.destination NOT NULL,
+    destination   UUID NOT NULL REFERENCES targetle.destination,
     year_of_birth INT                  NOT NULL,
     nationality   targetle.nationality NOT NULL,
     hitman_game   targetle.game        NOT NULL

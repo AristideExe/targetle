@@ -1,9 +1,9 @@
 <?php
 
 require_once(dirname(__FILE__) ."/Gender.php");
-require_once(dirname(__FILE__) ."/Destination.php");
 require_once(dirname(__FILE__) ."/Nationality.php");
 require_once(dirname(__FILE__) ."/Game.php");
+require_once(dirname(__FILE__) ."/Destination.php");
 
 class Target implements JsonSerializable {
 
@@ -42,7 +42,7 @@ class Target implements JsonSerializable {
             "image_path"=> $this->image_path,
             "name"=> $this->name,
             "gender"=> $this->gender->name,
-            "destination"=> $this->destination->name,
+            "destination"=> $this->destination->translations,
             "yearOfBirth"=> $this->yearOfBirth,
             "nationality"=> $this->nationality->name,
             "hitmanGame"=> $this->hitmanGame->name,
@@ -55,7 +55,7 @@ class Target implements JsonSerializable {
             "image_path" => ["value" => $this->image_path, "result" => $this->image_path == $target->image_path],
             "name" => ["value" => $this->name, "result" => $this->name == $target->name],
             "gender" => ["value" => $this->gender->name, "result" => $this->gender == $target->gender],
-            "destination" => ["value" => $this->destination->name, "result" => $this->destination == $target->destination],
+            "destination" => ["value" => $this->destination->translations, "result" => $this->destination->id == $target->destination->id],
             "yearOfBirth" => ["value" => $this->yearOfBirth, "result" => $this->yearOfBirth < $target->yearOfBirth ? 'more' : 
                 ($this->yearOfBirth > $target->yearOfBirth ? 'less' : true)],
             "nationality" => ["value" => $this->nationality->name, "result" => $this->nationality == $target->nationality],

@@ -3,13 +3,14 @@ import MainAnswers from "../MainAnswers/MainAnswers.jsx";
 import {useEffect, useState} from "react";
 import WinModal from "../WinModal/WinModal.jsx";
 import {useLocalStorage} from "@uidotdev/usehooks";
+import useStatistics from "../WinModal/Statistics.js";
+import {MAIN} from "../../enums/Gamemode.js";
 
 const MainGameMode = () => {
     const [ answers, setAnswers ] = useLocalStorage("mainGameModeAnswers", []);
-    const [ lastPlayed, setLastPlayed ] = useLocalStorage("mainGameModeLastPlayed", new Date().toLocaleDateString());
-    const [ isVictory, setVictory ] = useLocalStorage("mainGameModeVictoryToday", false);
-    const [ numberOfVictories, setNumberOfVictories ] = useLocalStorage("mainGameModeNumberOfVictories", 0);
-    const [ dailyStreak, setDailyStreak ] = useLocalStorage("mainGameModeDailyStreak", 0);
+    const [ isVictory, setVictory ] = useState(false);
+    const { lastPlayed, setLastPlayed, lastVictory, setLastVictory,
+        victoriesCount, setVictoriesCount, dailyStreak, setDailyStreak } = useStatistics(MAIN);
 
     const [isModalVisible, setModalVisible] = useState(false);
     const [ selectDisabled, setSelectDisabled ] = useState(false);
@@ -44,8 +45,9 @@ const MainGameMode = () => {
         }
         else {
             setVictory(true);
-            setNumberOfVictories(numberOfVictories + 1);
+            setVictoriesCount(victoriesCount + 1)
             setDailyStreak(dailyStreak + 1);
+            setLastVictory(new Date().toLocaleDateString())
             setModalVisible(true);
         }
     }
@@ -70,15 +72,17 @@ const MainGameMode = () => {
 
     useEffect(() => {
         const currentDate = new Date().toLocaleDateString()
-        const yesterday = new Date(new Date().setDate(new Date().getDate()-1));
+        const yesterday = new Date(new Date().setDate(new Date().getDate()-1)).toLocaleDateString();
         if (lastPlayed !== currentDate){
-            // Si la personne n'a pas joué hier ou n'a pas gagné, on reset son daily streak
-            if (lastPlayed !== yesterday.toLocaleDateString() || !isVictory){
+            // Si la personne n'a pas gagné hier, on reset son daily streak
+            if (lastVictory !== yesterday){
                 setDailyStreak(0);
             }
-            setVictory(false);
             setAnswers([]);
             setLastPlayed(currentDate);
+        }
+        else if (lastVictory === currentDate){
+            setVictory(true);
         }
     }, []);
 
@@ -100,7 +104,7 @@ const MainGameMode = () => {
                 closeFunc={closeModal}
                 targetName={answers[0]?.name?.value}
                 targetImage={answers[0]?.image_path?.value}
-                numberOfVictories={numberOfVictories}
+                numberOfVictories={victoriesCount}
                 dailyStreak={dailyStreak}
                 numberOfAttempts={answers.length}
             />

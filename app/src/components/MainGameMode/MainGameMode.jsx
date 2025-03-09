@@ -2,15 +2,15 @@ import TargetSelect, {valuesToFilter} from "../TargetSelector/TargetSelect.jsx";
 import MainAnswers from "../MainAnswers/MainAnswers.jsx";
 import {useEffect, useState} from "react";
 import WinModal from "../WinModal/WinModal.jsx";
-import {useLocalStorage} from "@uidotdev/usehooks";
 import useStatistics from "../WinModal/Statistics.js";
 import {MAIN} from "../../enums/Gamemode.js";
+import useAnswers from "../Answers/Answers.js";
 
 const MainGameMode = () => {
-    const [ answers, setAnswers ] = useLocalStorage("mainGameModeAnswers", []);
     const [ isVictory, setVictory ] = useState(false);
     const { lastPlayed, setLastPlayed, lastVictory, setLastVictory,
         victoriesCount, setVictoriesCount, dailyStreak, setDailyStreak } = useStatistics(MAIN);
+    const { answers, addAnswer, clearAnswers } = useAnswers(MAIN);
 
     const [isModalVisible, setModalVisible] = useState(false);
     const [ selectDisabled, setSelectDisabled ] = useState(false);
@@ -61,7 +61,7 @@ const MainGameMode = () => {
                 return response.json();
             })
             .then(proposal => {
-                setAnswers([proposal, ...answers ]);
+                addAnswer(proposal);
                 setSelectDisabled(true);
                 setTimeout(() => checkVictory(proposal), 3000);
             })
@@ -78,7 +78,7 @@ const MainGameMode = () => {
             if (lastVictory !== yesterday){
                 setDailyStreak(0);
             }
-            setAnswers([]);
+            clearAnswers();
             setLastPlayed(currentDate);
         }
         else if (lastVictory === currentDate){

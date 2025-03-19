@@ -1,0 +1,43 @@
+.overlayModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap:.7rem;
+    max-width: 60%;
+    overflow: auto;
+}
+
+.modal > * {
+    color: var(--color-main);
+    background-color: var(--background-color-secondary);
+}
+
+.button {
+    padding: 1rem 1rem;
+    font-weight: bold;
+    transition: all 0.1s ease-in-out;
+    font-size: larger;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    border: none;
+}
+.button:hover {
+    background-color: var(--color-red);
+}
+
+.button .icon {
+    padding: 0px 10px;
+}

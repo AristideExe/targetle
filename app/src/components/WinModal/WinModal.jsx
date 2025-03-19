@@ -1,53 +1,43 @@
 import PropTypes from "prop-types";
 import {useTranslation} from "react-i18next";
-import ReactModal from 'react-modal';
-import {Link} from "react-router-dom";
 import styles from "./WinModal.module.css";
-import Icon from "../Icon/Icon.jsx";
 import {ACCEPT} from "../Icon/IconsEnum.js";
 import {randomLabel as randomPlaystyle} from "../../enums/Playstyle.js";
+import Modal from "../Modal/Modal.jsx";
+import Button from "../Modal/Button.jsx";
 
 const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage, numberOfVictories, dailyStreak, numberOfAttempts }) => {
     const { t } = useTranslation();
 
     return (
-        <ReactModal
-            isOpen={isVisible}
-            shouldFocusAfterRender={false}
-            className={styles.modal}
-            overlayClassName={styles.overlayModal}
-            shouldCloseOnEsc
-        >
-            {targetName && targetImage && (
-                <div className={styles.text}>
-                    <div className={styles.resultsContainer}>
-                        <img src={`targets/${targetImage}`} />
-                        <div className={styles.results}>
-                            <span className={styles.playstyle}>{randomPlaystyle(t)}</span>
-                            <p>{t("home.winModal.resultText")}</p>
-                            <div className={styles.statistics}>
-                                <div>
-                                    <span>{t("home.winModal.numberOfAttempts")}:</span>
-                                    <p>{numberOfAttempts}</p>
-                                </div>
-                                <div>
-                                    <span>{t("home.winModal.numberOfVictories")}:</span>
-                                    <p>{numberOfVictories}</p>
-                                </div>
-                                <div>
-                                    <span>{t("home.winModal.dailyStreak")}:</span>
-                                    <p>{dailyStreak}</p>
+        <Modal isVisible={isVisible}>
+            <div>
+                {targetName && targetImage && (
+                        <div className={styles.resultsContainer}>
+                            <img src={`targets/${targetImage}`} />
+                            <div className={styles.results}>
+                                <span className={styles.playstyle}>{randomPlaystyle(t)}</span>
+                                <p>{t("home.winModal.resultText")}</p>
+                                <div className={styles.statistics}>
+                                    <div>
+                                        <span>{t("home.winModal.numberOfAttempts")}:</span>
+                                        <p>{numberOfAttempts}</p>
+                                    </div>
+                                    <div>
+                                        <span>{t("home.winModal.numberOfVictories")}:</span>
+                                        <p>{numberOfVictories}</p>
+                                    </div>
+                                    <div>
+                                        <span>{t("home.winModal.dailyStreak")}:</span>
+                                        <p>{dailyStreak}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
-                </div>
-            )}
-            <Link to={{}} onClick={closeFunc} className={styles.button}>
-                <Icon icon={ACCEPT} className={styles.icon}/>
-                {t("home.winModal.closeModal")}
-            </Link>
-        </ReactModal>
+                )}
+            </div>
+            <Button onClick={closeFunc} icon={ACCEPT} text={t("home.winModal.closeModal")}/>
+        </Modal>
     )
 }
 

@@ -1,51 +1,7 @@
-.modal {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 60%;
-    overflow: auto;
-}
-
-.overlayModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.text {
-    color: var(--color-main);
-    background-color: var(--background-color-secondary);
-    padding: 50px 20px;
-}
-
-.button {
-    color: var(--color-main);
-    background-color: var(--background-color-secondary);
-    padding: 1rem 1rem;
-    font-weight: bold;
-    transition: all 0.1s ease-in-out;
-    font-size: larger;
-    text-transform: uppercase;
-}
-
-.button:hover {
-    background-color: var(--color-red);
-}
-
-.button .icon {
-    padding: 0px 10px;
-}
-
 .resultsContainer {
     display: flex;
     gap: 5rem;
-    padding: 1rem 4rem;
+    padding: 2rem 4rem;
     align-items: center;
 }
 

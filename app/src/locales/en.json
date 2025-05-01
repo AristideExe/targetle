@@ -90,7 +90,6 @@
         },
         "layout": {
             "header": {
-                "changeLangage": "Change language",
                 "showCredits": "About"
             },
             "footer": {

@@ -29,11 +29,20 @@ const Layout = () => {
         <>
             <div className={styles.layout}>
                 <div className={styles.header}>
-                    <Link to={{}} onClick={handleChangeLanguage}>{t("layout.header.changeLangage")}</Link>
+                    <div>
+                        <Link to={{}} onClick={handleChangeLanguage}>
+                            <img
+                                className={styles.flag}
+                                src={`flags/${currentLanguage === 'fr' ? 'en' : 'fr'}.png`}
+                            />
+                        </Link>
+                    </div>
                     <Link to="/" className={styles.title}>
                         <h1>TARGETLE</h1>
                     </Link>
-                    <Link to={{}} onClick={() => setCreditsModalVisible(true)}>{t("layout.header.showCredits")}</Link>
+                    <div>
+                        <Link to={{}} onClick={() => setCreditsModalVisible(true)}>{t("layout.header.showCredits")}</Link>
+                    </div>
                 </div>
                 <div className={styles.content}>
                     <Outlet/>

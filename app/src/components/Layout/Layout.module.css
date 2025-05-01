@@ -14,17 +14,23 @@
     margin-top: 50px;
 }
 
-.header a {
+.header div {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-red);
+}
+
 .title h1 {
     color: var(--background-color-main);
     letter-spacing: 1rem;
-    background-color: var(--color-red);
-    padding: 0 4rem;
+    padding: .2rem 0;
 }
 
 .content {
@@ -61,4 +67,8 @@
 .footerLink .footerIcon {
     height: 3rem;
     padding: 0 1rem;
+}
+
+.flag {
+    height: 2rem;
 }

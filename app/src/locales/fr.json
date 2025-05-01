@@ -117,11 +117,19 @@
         },
         "layout": {
             "header": {
-                "changeLangage": "Changer la langue"
+                "changeLangage": "Changer la langue",
+                "showCredits": "À Propos"
             },
             "footer": {
                 "home": "Accueil",
                 "howToPlay": "Comment jouer"
+            },
+            "credits": {
+                "mainRule": "Chaque jour, essayez de devinez la cible des jeux Hitman à l'aide des indices donnés.",
+                "legalProperty": "Targetle utilise des actifs appartenants à IO Interactive. IOI ne cautionne ni ne sponsorise ce projet.",
+                "cookies": "Le site ne récole aucun cookie",
+                "inspiredBy": "Grandement inspiré par <0>LOLdle</0>",
+                "developpedBy": "Développé par Aristide (<0>aristideproriol.com</0>) pour montrer mon amour envers la franchise Hitman et IOI en général"
             }
         },
         "home": {

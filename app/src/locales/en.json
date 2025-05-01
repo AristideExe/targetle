@@ -90,11 +90,19 @@
         },
         "layout": {
             "header": {
-                "changeLangage": "Change language"
+                "changeLangage": "Change language",
+                "showCredits": "About"
             },
             "footer": {
                 "home": "Home",
                 "howToPlay": "How To Play"
+            },
+            "credits": {
+              "mainRule": "Every day, try to guess the Hitman target thanks to clues given.",
+              "legalProperty": "Targetle use assets owned by IO Interactive. IOI does not endorse nor sponsor this project.",
+              "cookies": "The website doesn't collect any cookie",
+              "inspiredBy": "Mainly inspired by <0>LOLdle</0>",
+              "developpedBy": "Developped by (<0>aristideproriol.com</0>) to show my love to the Hitman franchise and to IOI as a whole"
             }
         },
         "home": {

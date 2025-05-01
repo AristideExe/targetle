@@ -113,6 +113,9 @@
                 "more": "More",
                 "less": "Less"
             },
+            "creditsModal": {
+              "closeModal": "Accept"
+            },
             "targetSelector": {
                 "noCharacterFound": "No target found",
                 "startTyping": "Start typing target name",

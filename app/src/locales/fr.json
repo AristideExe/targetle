@@ -140,6 +140,9 @@
                 "more": "Supérieur",
                 "less": "Inférieur"
             },
+            "creditsModal": {
+                "closeModal": "Valider"
+            },
             "targetSelector": {
                 "noCharacterFound": "Aucune cible trouvée",
                 "startTyping": "Commencez à taper le nom d'une cible",

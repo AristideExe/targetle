@@ -46,3 +46,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@media screen and (max-width: 900px) {
+    .gameInfos {
+        width: 80%;
+    }
+}

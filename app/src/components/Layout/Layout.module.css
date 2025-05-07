@@ -72,3 +72,14 @@
 .flag {
     height: 2rem;
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+    .content {
+        width: 90%;
+    }
+
+    .title{
+        font-size: 12px;
+    }
+}

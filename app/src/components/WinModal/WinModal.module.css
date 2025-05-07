@@ -12,6 +12,7 @@
     font-size: larger;
     padding: .2rem 5rem;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .results {
@@ -41,4 +42,10 @@
 
 .statistics p {
     font-size: large;
+}
+
+@media screen and (max-width: 900px) {
+    .resultsContainer {
+        flex-direction: column;
+    }
 }

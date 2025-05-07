@@ -25,12 +25,14 @@
     align-items: center;
     justify-content: center;
     background-color: var(--color-red);
+    text-align: center;
 }
 
 .title h1 {
     color: var(--background-color-main);
     letter-spacing: 1rem;
     padding: .2rem 0;
+    text-align: center;
 }
 
 .content {

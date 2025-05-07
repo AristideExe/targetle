@@ -16,7 +16,7 @@ const WinModal = ({ isVisible = false, closeFunc, targetName, targetImage, numbe
                         <div className={styles.resultsContainer}>
                             <img src={`targets/${targetImage}`} />
                             <div className={styles.results}>
-                                <span className={styles.playstyle}>{randomPlaystyle(t)}</span>
+                                <p className={styles.playstyle}>{randomPlaystyle(t)}</p>
                                 <p>{t("home.winModal.resultText")}</p>
                                 <div className={styles.statistics}>
                                     <div>

@@ -36,13 +36,13 @@
 }
 
 .colorIndicator .more{
-    background-image: url("up-arrow.png");
+    background-image: url("/up-arrow.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .colorIndicator .less{
-    background-image: url("down-arrow.png");
+    background-image: url("/down-arrow.png");
     background-repeat: no-repeat;
     background-size: cover;
 }

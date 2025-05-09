@@ -55,13 +55,13 @@
 }
 
 .answer .more{
-    background-image: url("up-arrow.png");
+    background-image: url("/up-arrow.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .answer .less{
-    background-image: url("down-arrow.png");
+    background-image: url("/down-arrow.png");
     background-repeat: no-repeat;
     background-size: cover;
 }

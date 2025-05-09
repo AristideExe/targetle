@@ -7,7 +7,7 @@ const Home = () => {
 
     return (
         <>
-            <h2>{t("home.title")}</h2>
+            <h2 className={styles.title}>{t("home.title")}</h2>
             <MainGameMode />
         </>
     )

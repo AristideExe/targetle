@@ -8,7 +8,7 @@ body {
     --color-red: #ff000e;
     --color-white: white;
     --color-green: #10460f;
-    --background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('backgroundImage.png');
+    --background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('/backgroundImage.png');
 
     scrollbar-color: var(--color-red) var(--background-color-tertiary);
     scrollbar-width: thin;
@@ -16,7 +16,7 @@ body {
 
 @font-face {
     font-family: 'Hitman Font';
-    src: local('M Ying Hei PRC W48 W7'), url('fonts/hitmanFont.ttf') format('truetype');
+    src: local('M Ying Hei PRC W48 W7'), url('/fonts/hitmanFont.ttf') format('truetype');
 }
 
 * {

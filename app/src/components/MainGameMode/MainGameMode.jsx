@@ -20,7 +20,7 @@ const MainGameMode = () => {
     const closeModal = () => setModalVisible(false);
 
     const loadOptions = (inputValue, callback) => {
-        fetch(`http://localhost:8000/controllers/TargetController.php?
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/controllers/TargetController.php?
         getAll&filter=${JSON.stringify(valuesToFilter({
             startWith: inputValue, 
             notIn
@@ -53,7 +53,7 @@ const MainGameMode = () => {
     }
 
     const onChange = (value) => {
-        fetch(` http://localhost:8000/controllers/TargetController.php?propose=${value.target_id}`)
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/controllers/TargetController.php?propose=${value.target_id}`)
             .then(response => {
                 if (!response.ok){
                     throw new Error('Erreur réseau: ' + response.statusText)

@@ -33,7 +33,7 @@ const Layout = () => {
                         <Link to={{}} onClick={handleChangeLanguage}>
                             <img
                                 className={styles.flag}
-                                src={`flags/${currentLanguage === 'fr' ? 'en' : 'fr'}.png`}
+                                src={`flags/${currentLanguage === 'fr' ? 'fr' : 'en'}.png`}
                             />
                         </Link>
                     </div>
